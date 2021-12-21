@@ -28,7 +28,7 @@
 |Scene         |存放场景文件              |
 |SimpleJSON    |存放解析json的工具        |
 
-##4.1. 序列图
+## 4. 序列图
 ![sequence](https://github.com/89trillion-wangjian/DailyAward/blob/master/seq.png)
 ##5.todo
 事件传递方式：可以用委托实现一个全局事件传递，弃用现用的脚本传递方式，解耦
