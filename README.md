@@ -28,7 +28,7 @@
 |Scene         |存放场景文件              |
 |SimpleJSON    |存放解析json的工具        |
 ## 4.流程图
-```seq
+```sequence
 startBtn->MainView: 读取json
 MainView->DailyJewelView: 显示
 DailyNodeView->MainView: 飞金币动效
