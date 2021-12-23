@@ -27,18 +27,9 @@
 |data          |存放本地存放的json数据等  |
 |Scene         |存放场景文件              |
 |SimpleJSON    |存放解析json的工具        |
-## 4.流程图
-```sequence
-startBtn->MainView: 读取json
-MainView->DailyJewelView: 显示
-DailyNodeView->MainView: 飞金币动效
-DailyNodeView->MyAssetsCtrl: 加金币
-SolderCtrl->MainView: 飞金币动效
-SolderCtrl->MyAssetsCtrl: 加金币
-MainView->CoinCtrl: 创建金币
-```
-##4.1. 序列图
-![sequence](https://github.com/89trillion-wangjian/DailyAward/tree/master/dailyJewel/Assets/Resources)
+
+## 4. 序列图
+![sequence](https://github.com/89trillion-wangjian/DailyAward/blob/master/seq.png)
 ##5.todo
 事件传递方式：可以用委托实现一个全局事件传递，弃用现用的脚本传递方式，解耦
 分层：由于时间问题，没有采用mvc分层，健壮性不强
