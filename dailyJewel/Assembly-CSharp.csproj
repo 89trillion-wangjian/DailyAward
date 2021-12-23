@@ -72,31 +72,31 @@
      <Compile Include="Assets\SimpleJSON\SimpleJSONUnity.cs" />
      <None Include="Assets\Resources\material\hui.shader" />
  <Reference Include="Unity.Timeline.Editor">
- <HintPath>/Users/wangjian/Documents/unityFile/dailyJewel/dailyJewel/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ <HintPath>/Users/wangjian/Documents/unityFile/DailyAward/dailyJewel/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VSCode.Editor">
- <HintPath>/Users/wangjian/Documents/unityFile/dailyJewel/dailyJewel/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+ <HintPath>/Users/wangjian/Documents/unityFile/DailyAward/dailyJewel/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>/Users/wangjian/Documents/unityFile/dailyJewel/dailyJewel/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>/Users/wangjian/Documents/unityFile/DailyAward/dailyJewel/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>/Users/wangjian/Documents/unityFile/dailyJewel/dailyJewel/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ <HintPath>/Users/wangjian/Documents/unityFile/DailyAward/dailyJewel/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline">
- <HintPath>/Users/wangjian/Documents/unityFile/dailyJewel/dailyJewel/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+ <HintPath>/Users/wangjian/Documents/unityFile/DailyAward/dailyJewel/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
  </Reference>
  <Reference Include="Unity.CollabProxy.Editor">
- <HintPath>/Users/wangjian/Documents/unityFile/dailyJewel/dailyJewel/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+ <HintPath>/Users/wangjian/Documents/unityFile/DailyAward/dailyJewel/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Rider.Editor">
- <HintPath>/Users/wangjian/Documents/unityFile/dailyJewel/dailyJewel/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+ <HintPath>/Users/wangjian/Documents/unityFile/DailyAward/dailyJewel/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>/Users/wangjian/Documents/unityFile/dailyJewel/dailyJewel/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>/Users/wangjian/Documents/unityFile/DailyAward/dailyJewel/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
- <HintPath>/Users/wangjian/Documents/unityFile/dailyJewel/dailyJewel/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>/Users/wangjian/Documents/unityFile/DailyAward/dailyJewel/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -276,7 +276,7 @@
  <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
  </Reference>
  <Reference Include="nunit.framework">
- <HintPath>/Users/wangjian/Documents/unityFile/dailyJewel/dailyJewel/Library/PackageCache/com.unity.ext.nunit@1.0.5/net35/unity-custom/nunit.framework.dll</HintPath>
+ <HintPath>/Users/wangjian/Documents/unityFile/DailyAward/dailyJewel/Library/PackageCache/com.unity.ext.nunit@1.0.5/net35/unity-custom/nunit.framework.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>/Applications/Unity/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>

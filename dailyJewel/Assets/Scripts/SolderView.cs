@@ -26,7 +26,7 @@ public class SolderView : MonoBehaviour
         GameObject myAssetsCoin;
         myAssets = GameObject.Find("Canvas/dailyJewel/myAssets");
         Debug.Log(myAssets);
-        myAssets.SendMessage("AddCoins", 1000);
+        myAssets.SendMessage("AddCoins", 5);
         
     }
 }
