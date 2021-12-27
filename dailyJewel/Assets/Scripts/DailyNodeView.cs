@@ -11,15 +11,15 @@ public class DailyNodeView : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public GameObject btnBuy;
-    public GameObject hasBuy;
+    [SerializeField]public GameObject btnBuy;
+    [SerializeField]public GameObject hasBuy;
 
-    public Image cardImage;
-    public Text cardColdLabel;
-    public GameObject moneyImage;
-    public Text countLabel;
+    [SerializeField]public Image cardImage;
+    [SerializeField]public Text cardColdLabel;
+    [SerializeField]public GameObject moneyImage;
+    [SerializeField]public Text countLabel;
     
-    public Sprite[] Sprites;
+    [SerializeField]public Sprite[] Sprites;
 
     private int rewardType;
 
@@ -89,8 +89,6 @@ public class DailyNodeView : MonoBehaviour
         
         //刷新card
         string subType = itemData.GetValueOrDefault("subType", null);
-        Debug.Log(subType);
-        Debug.Log("子类型");
         if (string.IsNullOrEmpty(subType))
         {
             float randow = Random.Range(0, 1.0f);
@@ -111,7 +109,7 @@ public class DailyNodeView : MonoBehaviour
         cardImage.rectTransform.sizeDelta = new Vector2(cardImage.sprite.rect.width * 0.65f,cardImage.sprite.rect.height * 0.65f);
         //数量
         string count = itemData.GetValueOrDefault("num", 1);
-        countLabel.text = count;
+        countLabel.text = string.Concat("x" ,count);
         
         
         

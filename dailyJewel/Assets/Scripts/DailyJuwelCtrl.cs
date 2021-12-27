@@ -8,12 +8,12 @@ using UnityEngine.UI;
 public class DailyJuwelCtrl : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject dailyNode;
-    public GameObject solderNode;
+    [SerializeField]public GameObject dailyNode;
+    [SerializeField]public GameObject solderNode;
 
-    public GameObject dailyItme;
-    public GameObject dailyLockItem;
-    public GameObject solderItem;
+    [SerializeField]public GameObject dailyItme;
+    [SerializeField]public GameObject dailyLockItem;
+    [SerializeField]public GameObject solderItem;
     void Start()
     {
         
@@ -21,7 +21,6 @@ public class DailyJuwelCtrl : MonoBehaviour
 
     public void GetDataRender(JSONNode jsonNode)
     {
-        Debug.Log(jsonNode);
        //Double jsonHang = Math.Ceiling(5.0 / 3.0);
         //int total = Convert.ToInt16(jsonHang * 3.0);
         //int preCount = 5;

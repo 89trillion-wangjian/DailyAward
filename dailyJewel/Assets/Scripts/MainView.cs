@@ -10,10 +10,10 @@ using Object = System.Object;
 public class MainView : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject dailyJewel;
+    [SerializeField]public GameObject dailyJewel;
 
-    public Sprite[] coinImages;
-    public GameObject prefabCoin;
+    [SerializeField]public Sprite[] coinImages;
+    [SerializeField]public GameObject prefabCoin;
     
     private delegate void dlgCrossThread();
     //private dlgCrossThread DCT = new dlgCrossThread(playCoinAni);
@@ -26,9 +26,12 @@ public class MainView : MonoBehaviour
      */
     public void OnBtnClick()
     {
-        Debug.Log("点击按钮");
         JSONNode str = ReadJson();
-        
+        if (!string.IsNullOrEmpty(str))
+        {
+            return;
+        }
+
         dailyJewel.SetActive(true);
         dailyJewel.GetComponent<DailyJuwelCtrl>().GetDataRender(str);
     }
@@ -41,11 +44,19 @@ public class MainView : MonoBehaviour
         //json = JsonMapper.ToObject(str);
         //JsonData jsonJemp = new JsonData();
         //JSONNode jsonNode = new JSONString(str);
-        var simpleJson = JSON.Parse(str);
-        //jsonJemp = JsonUtility.FromJson<JsonData>(Application.dataPath + "/data/data.json");
-        //Debug.Log(jsonJemp.dailyProduct);
-        //Debug.Log(simpleJson["dailyProduct"]);
-        return simpleJson["dailyProduct"];
+        try
+        {
+            var simpleJson = JSON.Parse(str);
+            //jsonJemp = JsonUtility.FromJson<JsonData>(Application.dataPath + "/data/data.json");
+            //Debug.Log(jsonJemp.dailyProduct);
+            //Debug.Log(simpleJson["dailyProduct"]);
+            return simpleJson["dailyProduct"];
+        }
+        catch (Exception e)
+        {
+            return null;
+        }
+        
     }
 
     public void OnBtnClose()
@@ -61,10 +72,10 @@ public class MainView : MonoBehaviour
         int createNum = Math.Min(5, maxCoin - coinCount);
         //Debug.Log(maxCoin);
         //Debug.Log(coinCount);
-        StartCoroutine(create(createNum));
+        StartCoroutine(Create(createNum));
     }
 
-    IEnumerator create(int creatCount)
+    IEnumerator Create(int creatCount)
     {
         
         int i = 0;
