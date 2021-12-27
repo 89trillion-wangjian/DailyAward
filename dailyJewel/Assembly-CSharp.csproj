@@ -66,6 +66,7 @@
      <Compile Include="Assets\Scripts\MyAssetsCtrl.cs" />
      <Compile Include="Assets\Scripts\RewardType.cs" />
      <Compile Include="Assets\Scripts\SolderView.cs" />
+     <Compile Include="Assets\Scripts\UIDepth.cs" />
      <Compile Include="Assets\SimpleJSON\SimpleJSON.cs" />
      <Compile Include="Assets\SimpleJSON\SimpleJSONBinary.cs" />
      <Compile Include="Assets\SimpleJSON\SimpleJSONDotNetTypes.cs" />

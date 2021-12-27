@@ -75,11 +75,11 @@ public class DailyJuwelCtrl : MonoBehaviour
         //}
         LayoutRebuilder.ForceRebuildLayoutImmediate((this.dailyNode.transform as RectTransform));
         
-        for (int j = 0; j < 3; j++)
-        {
-            GameObject daily = Instantiate(this.solderItem);
-            daily.transform.SetParent(this.solderNode.transform, false);
-        }
+        // for (int j = 0; j < 3; j++)
+        // {
+            GameObject daily1 = Instantiate(this.solderItem);
+            daily1.transform.SetParent(this.solderNode.transform, false);
+        // }
         LayoutRebuilder.ForceRebuildLayoutImmediate((this.solderNode.transform as RectTransform));
         
         
