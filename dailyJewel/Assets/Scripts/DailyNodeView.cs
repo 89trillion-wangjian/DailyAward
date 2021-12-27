@@ -41,7 +41,6 @@ public class DailyNodeView : MonoBehaviour
             string coinNum = itemData.GetValueOrDefault("num", 1);
             GameObject myAssets;
             myAssets = GameObject.Find("Canvas/dailyJewel/myAssets");
-            Debug.Log(myAssets);
             myAssets.SendMessage("AddCoins", Convert.ToInt32(coinNum));
            // myAssets.GetComponent<MyAssetsCtrl>().AddCoins(Convert.ToInt32(coinNum));
            
@@ -56,7 +55,8 @@ public class DailyNodeView : MonoBehaviour
             GameObject myAssets;
             myAssets = GameObject.Find("Canvas/dailyJewel/myAssets");
             Debug.Log(myAssets);
-            myAssets.SendMessage("AddDiamonds", Convert.ToInt32(diaNum));
+            // myAssets.SendMessage("AddDiamonds", Convert.ToInt32(diaNum));
+            myAssets.SendMessage("AddCoins", Convert.ToInt32(diaNum));
             
             GameObject myCanvas;
             myCanvas = GameObject.Find("Canvas");
