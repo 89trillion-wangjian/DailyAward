@@ -5,7 +5,6 @@ using Model;
 using SimpleJSON;
 using UnityEngine;
 using UnityEngine.UI;
-using Utils;
 
 namespace View
 {
@@ -16,14 +15,12 @@ namespace View
         [SerializeField] public Sprite[] coinImages;
         [SerializeField] public GameObject prefabCoin;
         [SerializeField] private MainView mainView;
-        private GameObject myAssets;
         private int coinCount;
         private int coinIndex;
-        private int maxCoin = 15;
+        private readonly int maxCoin = 15;
 
         void Start()
         {
-            myAssets = GameObject.Find("Canvas/dailyJewel/myAssets/my_coin/coinImage");
             RegisterView(mainView);
             GameModel model = new GameModel();
             MVC.RegisterModel(model);
@@ -109,25 +106,8 @@ namespace View
         }
     }
 
-    // public class JsonData
-    // {
-    //     [SerializeField] public List<DailyProduct> DailyProduct;
-    //     [SerializeField] public int DailyProductCountDown;
-    // }
-    //
-    // [SerializeField]
-    // public abstract class DailyProduct
-    // {
-    //     [SerializeField] public int ProductId;
-    //     [SerializeField] public int Type;
-    //     [SerializeField] public int SubType;
-    //     [SerializeField] public int Num;
-    //     [SerializeField] public int CostGold;
-    //     [SerializeField] public int CostGem;
-    //     [SerializeField] public int IsPurchased;
-    // }
 
-    public class Consts
+    public static class Consts
     {
         public static string StartUp = "StartUp";
         public static string Createcoin = "Createcoin";

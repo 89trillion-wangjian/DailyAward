@@ -1,5 +1,4 @@
 ﻿using System;
-using Controller;
 using Entity;
 using SimpleJSON;
 using UnityEngine;
@@ -36,12 +35,10 @@ namespace View
             this.FreshDisplay();
             if (rewardType == (int) RewardType.Coins)
             {
-                //itemData.TryGetValue("num", out coinNum);
                 string coinNum = ItemData.GetValueOrDefault("num", 1);
                 GameObject myAssets;
                 myAssets = GameObject.Find("Canvas/dailyJewel/myAssets");
                 myAssets.SendMessage("AddCoins", Convert.ToInt32(coinNum));
-                // myAssets.GetComponent<MyAssetsCtrl>().AddCoins(Convert.ToInt32(coinNum));
 
                 GameObject myCanvas;
                 myCanvas = GameObject.Find("Canvas");
@@ -53,7 +50,6 @@ namespace View
                 GameObject myAssets;
                 myAssets = GameObject.Find("Canvas/dailyJewel/myAssets");
                 Debug.Log(myAssets);
-                // myAssets.SendMessage("AddDiamonds", Convert.ToInt32(diaNum));
                 myAssets.SendMessage("AddCoins", Convert.ToInt32(diaNum));
 
                 GameObject myCanvas;

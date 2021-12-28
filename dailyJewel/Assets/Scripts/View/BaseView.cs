@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Model;
 using UnityEngine;
 
 namespace View
@@ -33,7 +34,7 @@ namespace View
         protected T GetModel<T>()
             where T : BaseModel
         {
-            return MVC.GetModel<T>() as T;
+            return MVC.GetModel<T>();
         }
     }
 }

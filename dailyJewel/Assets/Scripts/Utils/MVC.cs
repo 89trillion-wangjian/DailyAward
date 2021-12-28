@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System;
 using Controller;
+using Model;
 using View;
 
 public class MVC

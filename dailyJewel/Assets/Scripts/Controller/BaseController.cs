@@ -1,4 +1,5 @@
 ﻿using System;
+using Model;
 using View;
 
 namespace Controller
@@ -10,13 +11,13 @@ namespace Controller
         protected T GetModel<T>()
             where T : BaseModel
         {
-            return MVC.GetModel<T>() as T;
+            return MVC.GetModel<T>();
         }
 
         protected T GetView<T>()
             where T : BaseView
         {
-            return MVC.GetView<T>() as T;
+            return MVC.GetView<T>();
         }
 
         /// <summary>

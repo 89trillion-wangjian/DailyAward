@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections;
 using System.IO;
 using SimpleJSON;
 using UnityEngine;
-using UnityEngine.UI;
 using View;
 
 namespace Controller
@@ -36,17 +34,12 @@ namespace Controller
          */
         private JSONNode ReadJson()
         {
-            StreamReader streamReader = new StreamReader(Application.dataPath + "/Data/data.json");
+            string path = String.Concat(Application.dataPath,"/Data/data.json" );
+            StreamReader streamReader = new StreamReader(path);
             string str = streamReader.ReadToEnd();
-            //json = JsonMapper.ToObject(str);
-            //JsonData jsonJemp = new JsonData();
-            //JSONNode jsonNode = new JSONString(str);
             try
             {
                 var simpleJson = JSON.Parse(str);
-                //jsonJemp = JsonUtility.FromJson<JsonData>(Application.dataPath + "/data/data.json");
-                //Debug.Log(jsonJemp.dailyProduct);
-                //Debug.Log(simpleJson["dailyProduct"]);
                 return simpleJson["dailyProduct"];
             }
             catch (Exception e)
