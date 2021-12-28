@@ -239,7 +239,6 @@ GameObject:
   - component: {fileID: 143282442508657795}
   - component: {fileID: 143282442508657793}
   - component: {fileID: 143282442508657794}
-  - component: {fileID: 703950540}
   - component: {fileID: 6785812516337830623}
   m_Layer: 5
   m_Name: Image
@@ -305,20 +304,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &703950540
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 143282442508657804}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 568102effcb1649dcada0f1cf804a45a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  order: 3
-  isUI: 1
 --- !u!223 &6785812516337830623
 Canvas:
   m_ObjectHideFlags: 0
@@ -10280,7 +10265,6 @@ GameObject:
   - component: {fileID: 2161716841539644898}
   - component: {fileID: 3539748395827379916}
   - component: {fileID: 1956749574875722522}
-  - component: {fileID: 703950538}
   m_Layer: 5
   m_Name: Shop_TreasureChest_Purple
   m_TagString: Untagged
@@ -15027,20 +15011,6 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!114 &703950538
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3054602333234843343}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 568102effcb1649dcada0f1cf804a45a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  order: 2
-  isUI: 0
 --- !u!1 &7105047926814774082
 GameObject:
   m_ObjectHideFlags: 0
@@ -24659,7 +24629,6 @@ GameObject:
   - component: {fileID: 5302601840955778409}
   - component: {fileID: 7957618393569365269}
   - component: {fileID: 8843118107271272451}
-  - component: {fileID: 703950536}
   m_Layer: 5
   m_Name: Image (1)
   m_TagString: Untagged
@@ -24723,17 +24692,3 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &703950536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9216433723375697257}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 568102effcb1649dcada0f1cf804a45a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  order: 1
-  isUI: 1

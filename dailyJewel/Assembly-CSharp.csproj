@@ -58,20 +58,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\CoinCtrl.cs" />
-     <Compile Include="Assets\Scripts\DailyJuwelCtrl.cs" />
-     <Compile Include="Assets\Scripts\DailyNodeView.cs" />
-     <Compile Include="Assets\Scripts\EventCenter.cs" />
-     <Compile Include="Assets\Scripts\MainView.cs" />
-     <Compile Include="Assets\Scripts\MyAssetsCtrl.cs" />
-     <Compile Include="Assets\Scripts\RewardType.cs" />
-     <Compile Include="Assets\Scripts\SolderView.cs" />
-     <Compile Include="Assets\Scripts\UIDepth.cs" />
+     <Compile Include="Assets\Scripts\Controller\BaseController.cs" />
+     <Compile Include="Assets\Scripts\Controller\MainCtrl.cs" />
+     <Compile Include="Assets\Scripts\Entity\EventType.cs" />
+     <Compile Include="Assets\Scripts\Entity\RewardType.cs" />
+     <Compile Include="Assets\Scripts\Model\BaseModel.cs" />
+     <Compile Include="Assets\Scripts\Model\GameModel.cs" />
+     <Compile Include="Assets\Scripts\Utils\EventCenter.cs" />
+     <Compile Include="Assets\Scripts\Utils\MVC.cs" />
+     <Compile Include="Assets\Scripts\View\BaseView.cs" />
+     <Compile Include="Assets\Scripts\View\DailyJuwelView.cs" />
+     <Compile Include="Assets\Scripts\View\DailyNodeView.cs" />
+     <Compile Include="Assets\Scripts\View\MainView.cs" />
+     <Compile Include="Assets\Scripts\View\MyAssetsView.cs" />
+     <Compile Include="Assets\Scripts\View\PlayCoinView.cs" />
+     <Compile Include="Assets\Scripts\View\SolderView.cs" />
      <Compile Include="Assets\SimpleJSON\SimpleJSON.cs" />
      <Compile Include="Assets\SimpleJSON\SimpleJSONBinary.cs" />
      <Compile Include="Assets\SimpleJSON\SimpleJSONDotNetTypes.cs" />
      <Compile Include="Assets\SimpleJSON\SimpleJSONUnity.cs" />
-     <None Include="Assets\Resources\material\hui.shader" />
+     <None Include="Assets\Resources\Material\hui.shader" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>/Users/wangjian/Documents/unityFile/DailyAward/dailyJewel/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
