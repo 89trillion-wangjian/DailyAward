@@ -16,12 +16,14 @@ namespace View
         [SerializeField] public Sprite[] coinImages;
         [SerializeField] public GameObject prefabCoin;
         [SerializeField] private MainView mainView;
+        private GameObject myAssets;
         private int coinCount;
         private int coinIndex;
         private int maxCoin = 15;
 
         void Start()
         {
+            myAssets = GameObject.Find("Canvas/dailyJewel/myAssets/my_coin/coinImage");
             RegisterView(mainView);
             GameModel model = new GameModel();
             MVC.RegisterModel(model);
@@ -72,6 +74,7 @@ namespace View
                 yield return new WaitForSeconds(0.1f);
             }
         }
+        
 
         public void ReduceCoin()
         {

@@ -6,26 +6,24 @@ namespace View
     {
         // Start is called before the first frame update
         private GameObject myAssets;
-        private float speed = 100.0f;
+        private readonly float speed = 100.0f;
         private float waitTime;
 
         void Start()
         {
             myAssets = GameObject.Find("Canvas/dailyJewel/myAssets/my_coin/coinImage");
             Debug.Log(myAssets);
+            PlayCoinAni();
         }
 
-        // Update is called once per frame
-        void Update()
+        private void PlayCoinAni()
         {
-            waitTime += Time.deltaTime;
-            waitTime = waitTime + Time.deltaTime;
-            if (waitTime < 0.3f)
+            if (!this.gameObject)
             {
                 return;
             }
 
-            if (Vector3.Distance(transform.position, myAssets.transform.position) > .2f)
+            if (Vector3.Distance(transform.position, myAssets.transform.position) > .6f)
             {
                 Vector3 directionOfTravel = myAssets.transform.position - transform.position;
                 directionOfTravel.Normalize();
@@ -43,6 +41,8 @@ namespace View
                 assets.SendMessage("ReduceCoin");
                 Destroy(this.gameObject);
             }
+
+            Invoke("PlayCoinAni", 0.1f);
         }
     }
 }
