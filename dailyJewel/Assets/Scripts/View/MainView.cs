@@ -4,7 +4,6 @@ using Controller;
 using Model;
 using SimpleJSON;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace View
 {
@@ -64,14 +63,11 @@ namespace View
                 GameObject coin = Instantiate(prefabCoin);
                 if (gameObject != null) coin.transform.SetParent(gameObject.transform, false);
                 coinCount++;
-                Image image = coin.GetComponent<Image>();
-                image.sprite = coinImages[i % 6];
-                image.rectTransform.sizeDelta =
-                    new Vector2(image.sprite.rect.width * 0.7f, image.sprite.rect.height * 0.7f);
+                PlayCoinView.Singleton.ChangeImage(coinImages[i % 6]);
                 yield return new WaitForSeconds(0.1f);
             }
         }
-        
+
 
         public void ReduceCoin()
         {

@@ -20,12 +20,15 @@ namespace View
         [SerializeField] private Text cardColdLabel;
         [SerializeField] private GameObject moneyImage;
         [SerializeField] private Text countLabel;
-
+        [SerializeField] private DailyNodeView dailyNodeView;
         private int rewardType;
         public JSONNode ItemData;
 
-        private void Start()
+        public static DailyNodeView Singleton;
+
+        private void Awake()
         {
+            Singleton = dailyNodeView;
             EventCenter.AddListener<JSONNode>(EventType.DailyJewelInit, InitData);
         }
 
@@ -61,7 +64,7 @@ namespace View
 
         public void InitData(JSONNode jsonNode)
         {
-            Debug.Log(jsonNode);
+            Debug.Log("收到数据" + jsonNode);
             this.ItemData = jsonNode;
             this.InitDisplay();
         }

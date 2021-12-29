@@ -16,10 +16,6 @@ namespace Controller
             Debug.Log("controller接受到" + this.view.Name);
             switch (eventName)
             {
-                case "Init":
-                {
-                    break;
-                }
                 case "StartUp":
                 {
                     JSONNode json = ReadJson();

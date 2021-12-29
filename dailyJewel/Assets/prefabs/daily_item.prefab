@@ -605,6 +605,7 @@ MonoBehaviour:
   cardColdLabel: {fileID: 4485640536404798965}
   moneyImage: {fileID: 4485640535637418043}
   countLabel: {fileID: 4485640536651647305}
+  dailyNodeView: {fileID: 5335179955139175488}
 --- !u!1 &4485640536017299487
 GameObject:
   m_ObjectHideFlags: 0

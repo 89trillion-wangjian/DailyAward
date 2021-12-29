@@ -1,4 +1,5 @@
 ﻿using System;
+using Model;
 using SimpleJSON;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,7 +22,7 @@ namespace View
             Double jsonHang = Math.Ceiling(jsonNode.Count / 3.0);
             int preCount = jsonNode.Count;
             int total = Convert.ToInt32(jsonHang * 3.0);
-
+            GameModel.CreateInstance().JsonNode = jsonNode;
             if (this.dailyNode.transform.childCount > 0)
             {
                 return;
@@ -35,8 +36,8 @@ namespace View
                 }
                 else
                 {
-                    GameObject daily = Instantiate(this.dailyItme, this.dailyNode.transform, false);
-                    daily.GetComponent<DailyNodeView>().InitData(jsonNode[i]);
+                    Instantiate(this.dailyItme, this.dailyNode.transform, false);
+                    DailyNodeView.Singleton.InitData(jsonNode[i]);
                 }
             }
 

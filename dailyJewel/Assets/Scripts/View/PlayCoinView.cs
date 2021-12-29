@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 namespace View
 {
@@ -8,12 +9,29 @@ namespace View
         private GameObject myAssets;
         private readonly float speed = 100.0f;
         private float waitTime;
+        [SerializeField] private Image image;
+        [SerializeField] private PlayCoinView coinView;
+        public static PlayCoinView Singleton;
+
+        public void Awake()
+        {
+            Singleton = coinView;
+        }
 
         void Start()
         {
+            
             myAssets = GameObject.Find("Canvas/dailyJewel/myAssets/my_coin/coinImage");
             Debug.Log(myAssets);
             PlayCoinAni();
+            
+        }
+
+        public void ChangeImage(Sprite sp)
+        {
+            image.sprite = sp;
+            image.rectTransform.sizeDelta =
+                new Vector2(image.sprite.rect.width * 0.7f, image.sprite.rect.height * 0.7f);
         }
 
         private void PlayCoinAni()
