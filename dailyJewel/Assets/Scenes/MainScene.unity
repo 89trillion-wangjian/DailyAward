@@ -898,6 +898,7 @@ MonoBehaviour:
   prefabCoin: {fileID: 7276270101042581873, guid: fa9d97b272d434aac8636ce1ecee5626,
     type: 3}
   mainCtrl: {fileID: 970927490}
+  mainView: {fileID: 970927489}
 --- !u!114 &970927490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1165,6 +1166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinNumLabel: {fileID: 857405613}
+  myAssetsView: {fileID: 1032771503}
 --- !u!1 &1078750976
 GameObject:
   m_ObjectHideFlags: 0

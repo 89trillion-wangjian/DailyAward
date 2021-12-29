@@ -45,8 +45,7 @@ namespace View
             if (rewardType == (int) RewardType.Coins)
             {
                 string coinNum = itemData.GetValueOrDefault("num", 1);
-                var myAssets = GameObject.Find("Canvas/dailyJewel/myAssets");
-                myAssets.SendMessage("AddCoins", Convert.ToInt32(coinNum));
+                MyAssetsView.Singleton.AddCoins(Convert.ToInt32(coinNum));
 
                 var myCanvas = GameObject.Find("Canvas");
                 myCanvas.SendMessage("CreateCoin");
@@ -54,11 +53,8 @@ namespace View
             else if (rewardType == (int) RewardType.Diamonds)
             {
                 string diaNum = itemData.GetValueOrDefault("num", 1);
-                var myAssets = GameObject.Find("Canvas/dailyJewel/myAssets");
-                myAssets.SendMessage("AddCoins", Convert.ToInt32(diaNum));
-
-                var myCanvas = GameObject.Find("Canvas");
-                myCanvas.SendMessage("CreateCoin");
+                MyAssetsView.Singleton.AddCoins(Convert.ToInt32(diaNum));
+                MainView.Singleton.CreateCoin();
             }
         }
 

@@ -595,7 +595,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5853588197381572486}
-        m_MethodName: OnBtnClick
+        m_MethodName: GetAward
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -4,13 +4,10 @@ namespace View
 {
     public class SolderView : MonoBehaviour
     {
-        public void OnBtnClick()
+        public void GetAward()
         {
-            var myAssets = GameObject.Find("Canvas");
-            myAssets.SendMessage("CreateCoin");
-
-            var myAssetsCoin = GameObject.Find("Canvas/dailyJewel/myAssets");
-            myAssetsCoin.SendMessage("AddCoins", 5);
+            MainView.Singleton.CreateCoin();
+            MyAssetsView.Singleton.AddCoins(5);
         }
     }
 }

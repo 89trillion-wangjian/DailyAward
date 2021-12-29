@@ -24,7 +24,7 @@ namespace View
 
         public void Start()
         {
-            myAssets = GameObject.Find("Canvas/dailyJewel/myAssets/my_coin/coinImage");
+            myAssets = MyAssetsView.Singleton.gameObject;
             Debug.Log(myAssets);
             PlayCoinAni();
         }
@@ -56,8 +56,7 @@ namespace View
             }
             else
             {
-                var assets = GameObject.Find("Canvas");
-                assets.SendMessage("ReduceCoin");
+                MainView.Singleton.ReduceCoin();
                 Destroy(this.gameObject);
             }
 

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Globalization;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,7 +10,16 @@ namespace View
     {
         [SerializeField] private Text coinNumLabel;
 
-        private int myCoins;
+        [SerializeField] private MyAssetsView myAssetsView;
+
+        public static MyAssetsView Singleton;
+
+        private int myCoins = 0;
+
+        public void Awake()
+        {
+            Singleton = myAssetsView;
+        }
 
         public void AddCoins(int coinValue)
         {
@@ -44,7 +54,7 @@ namespace View
             {
                 i++;
                 lastGoldCount += onceAddCount;
-                coinText.text = lastGoldCount.ToString(CultureInfo.CurrentCulture);
+                coinText.text = ((int)lastGoldCount).ToString();
                 yield return new WaitForSeconds(spaceTime);
             }
 

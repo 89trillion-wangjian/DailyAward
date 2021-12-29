@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using Controller;
-using Model;
 using SimpleJSON;
 using UnityEngine;
 
@@ -19,11 +18,20 @@ namespace View
 
         [SerializeField] private MainCtrl mainCtrl;
 
+        [SerializeField] private MainView mainView;
+
+        public static MainView Singleton;
+
         private int coinCount;
 
         private int coinIndex;
 
         private readonly int maxCoin = 15;
+
+        public void Awake()
+        {
+            Singleton = mainView;
+        }
 
         /// <summary>
         /// 读取json数据，成功后打开宝箱页面
