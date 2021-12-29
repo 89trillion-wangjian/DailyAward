@@ -3,31 +3,3 @@ O
 Assets/SimpleJSON/SimpleJSON.cs,a/0/a00202d936d36cdde4ea25259567eaf76e20156d
 [
 +Assets/Scripts/Controller/BaseController.cs,b/5/b59a2ab8a2d2ac769c00ef89b4fe4c886b72dc37
-U
-%Assets/Scripts/Controller/MainCtrl.cs,a/d/ad4c8a9e8b1495e944870070e581b649e6ab7bd3
-R
-"Assets/Scripts/Entity/EventType.cs,d/d/dd0a117c2abc085e8d4e22897fe3d353d32b67b6
-S
-#Assets/Scripts/Entity/RewardType.cs,b/d/bdb5fe22faf8123ee65fca0b666dda5ad800e74f
-Q
-!Assets/Scripts/Model/BaseModel.cs,0/b/0bce070f7e847df3b982fd0ca719500c25e4bfeb
-Q
-!Assets/Scripts/Model/GameModel.cs,1/0/10a9bf8e26a08dc93ff01229b1d2043d5d680a51
-K
-Assets/Scripts/Utils/MVC.cs,1/9/19ac57954de221004a47e70f0a1a55e714e48400
-S
-#Assets/Scripts/Utils/EventCenter.cs,6/1/615a75927c88e374274f674ce7533a398124d163
-O
-Assets/Scripts/View/BaseView.cs,d/7/d7cc87913a7ffc3ac06a2cdce7f8fe6879730f43
-U
-%Assets/Scripts/View/DailyJuwelView.cs,f/e/febad76835b9bd7965e2a4dc52045a3ef878493f
-T
-$Assets/Scripts/View/DailyNodeView.cs,4/a/4ae28dd14e85bd05f485e9a4499a811fcc432b00
-O
-Assets/Scripts/View/MainView.cs,7/d/7d7025cb665f2db62db5352c24b9d71085b9a3f8
-S
-#Assets/Scripts/View/MyAssetsView.cs,9/9/99bf74e1a484fec2a715790a23415d0a37460e71
-S
-#Assets/Scripts/View/PlayCoinView.cs,5/3/53b4041b161f017557a87b71fb591b463916e79f
-Q
-!Assets/Scripts/View/SolderView.cs,f/b/fbe1d5f9b71f6390bb68ef6ffbbe279cd9e01b88

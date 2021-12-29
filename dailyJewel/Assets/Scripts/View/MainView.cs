@@ -7,41 +7,39 @@ using UnityEngine;
 
 namespace View
 {
-    public class MainView : BaseView
+    public class MainView : MonoBehaviour
     {
-        [SerializeField] public GameObject dailyJewel;
+        [SerializeField] private GameObject dailyJewel;
+
         [SerializeField] private DailyJuwelView dailyJuwelView;
-        [SerializeField] public Sprite[] coinImages;
-        [SerializeField] public GameObject prefabCoin;
-        [SerializeField] private MainView mainView;
+
+        [SerializeField] private Sprite[] coinImages;
+
+        [SerializeField] private GameObject prefabCoin;
+
+        [SerializeField] private MainCtrl mainCtrl;
+
         private int coinCount;
+
         private int coinIndex;
+
         private readonly int maxCoin = 15;
 
-        void Start()
+        /// <summary>
+        /// 读取json数据，成功后打开宝箱页面
+        /// </summary>
+        public void ReadJson()
         {
-            RegisterView(mainView);
-            GameModel model = new GameModel();
-            MVC.RegisterModel(model);
-
-            RegisterController(Consts.StartUp, typeof(MainCtrl));
+            mainCtrl.ReadJson();
         }
 
-        /**
-        * 按钮点击
-         */
-        public void OnBtnClick()
-        {
-            SendEvent(Consts.StartUp);
-        }
-
-        public void OnGetRender(JSONNode str)
+        public void ShowDailyPanel(JSONNode str)
         {
             dailyJewel.SetActive(true);
-            dailyJuwelView.GetDataRender(str);
+            dailyJuwelView.RanderItem(str);
         }
 
-        public void OnBtnClose()
+        public void CloseView()
         {
             dailyJewel.SetActive(false);
         }
@@ -50,8 +48,6 @@ namespace View
         {
             int createNum = Math.Min(5, maxCoin - coinCount);
             StartCoroutine(Create(createNum));
-
-            SendEvent(Consts.Createcoin);
         }
 
         IEnumerator Create(int creatCount)
@@ -63,7 +59,7 @@ namespace View
                 GameObject coin = Instantiate(prefabCoin);
                 if (gameObject != null) coin.transform.SetParent(gameObject.transform, false);
                 coinCount++;
-                PlayCoinView.Singleton.ChangeImage(coinImages[i % 6]);
+                PlayCoinView.singleton.ChangeImage(coinImages[i % 6]);
                 yield return new WaitForSeconds(0.1f);
             }
         }
@@ -73,39 +69,5 @@ namespace View
         {
             coinCount--;
         }
-
-
-        // Update is called once per frame
-        public override string Name { get; } = "MainView";
-
-        public override void HandleEvent(string str, object data)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void RegisterController(string eventName, Type controllerType)
-        {
-            MVC.RegisterController(eventName, controllerType);
-        }
-
-        public void RegisterView(BaseView viewName)
-        {
-            MVC.RegisterView(viewName);
-        }
-
-        /// <summary>
-        /// 发送事件
-        /// </summary>
-        protected new void SendEvent(string eventName, object data = null)
-        {
-            MVC.SendEvent(eventName, data);
-        }
-    }
-
-
-    public static class Consts
-    {
-        public static string StartUp = "StartUp";
-        public static string Createcoin = "Createcoin";
     }
 }

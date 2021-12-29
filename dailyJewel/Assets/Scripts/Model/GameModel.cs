@@ -2,22 +2,16 @@
 
 namespace Model
 {
-    public class GameModel : BaseModel
+    public class GameModel 
     {
-        public override string Name { get; } = "GameModel";
-        public JSONNode JsonNode;
 
-        private static GameModel _singleton;
+        public JSONNode JsonNode { get; set; }
 
+        private static GameModel singleton;
 
         public static GameModel CreateInstance()
         {
-            if (_singleton == null)
-            {
-                _singleton = new GameModel();
-            }
-
-            return _singleton;
+            return singleton ?? (singleton = new GameModel());
         }
     }
 }

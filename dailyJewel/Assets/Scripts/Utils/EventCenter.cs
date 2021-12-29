@@ -307,7 +307,6 @@ namespace Utils
             _eventHandles[eventName] = (EventHandle<T1, T2, T3>) _eventHandles[eventName] - handle;
         }
 
-
         static void OnListeningAdd(string eventName, Delegate callback)
         {
             if (_eventHandles == null)

@@ -8,22 +8,26 @@ namespace View
 {
     public class DailyJuwelView : MonoBehaviour
     {
-        // Start is called before the first frame update
-        [SerializeField] public GameObject dailyNode;
-        [SerializeField] public GameObject solderNode;
+        [SerializeField] private GameObject dailyNode;
+        
+        [SerializeField] private GameObject solderNode;
 
-        [SerializeField] public GameObject dailyItme;
-        [SerializeField] public GameObject dailyLockItem;
-        [SerializeField] public GameObject solderItem;
-
-
-        public void GetDataRender(JSONNode jsonNode)
+        [SerializeField] private GameObject dailyItme;
+        
+        [SerializeField] private GameObject dailyLockItem;
+        
+        [SerializeField] private GameObject solderItem;
+        
+        /// <summary>
+        /// 渲染卡牌奖励和士兵招募宝箱
+        /// </summary>
+        /// <param name="jsonNode"></param>
+        public void RanderItem(JSONNode jsonNode)
         {
             Double jsonHang = Math.Ceiling(jsonNode.Count / 3.0);
             int preCount = jsonNode.Count;
             int total = Convert.ToInt32(jsonHang * 3.0);
-            GameModel.CreateInstance().JsonNode = jsonNode;
-            if (this.dailyNode.transform.childCount > 0)
+            if (dailyNode.transform.childCount > 0)
             {
                 return;
             }
@@ -40,7 +44,6 @@ namespace View
                     DailyNodeView.Singleton.InitData(jsonNode[i]);
                 }
             }
-
             LayoutRebuilder.ForceRebuildLayoutImmediate((this.dailyNode.transform as RectTransform));
 
             Instantiate(this.solderItem, this.solderNode.transform, false);

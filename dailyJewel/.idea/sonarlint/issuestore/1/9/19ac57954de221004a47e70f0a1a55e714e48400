@@ -1,4 +1,0 @@
-
-gcsharpsquid:S101"KRename class 'MVC' to match pascal case naming rules, consider using 'Mvc'.(„Ñí”
-lcsharpsquid:S1118"OAdd a 'protected' constructor or the 'static' keyword to the class declaration.(„Ñí”
-?csharpsquid:S3903""Move 'MVC' into a named namespace.(„Ñí”

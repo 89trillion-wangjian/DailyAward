@@ -6,42 +6,26 @@ using View;
 
 namespace Controller
 {
-    public class MainCtrl : BaseController
+    public class MainCtrl : MonoBehaviour
     {
-        private MainView view;
-
-        public override void Execute(string eventName, object data)
+        
+        [SerializeField] private MainView mainView;
+        
+       /// <summary>
+       ///  读取json数据
+       /// </summary>
+        public void ReadJson()
         {
-            this.view = this.GetView<MainView>();
-            Debug.Log("controller接受到" + this.view.Name);
-            switch (eventName)
-            {
-                case "StartUp":
-                {
-                    JSONNode json = ReadJson();
-                    this.view.OnGetRender(json);
-                    break;
-                }
-            }
-        }
-
-        /**
-         * 读取json
-         */
-        private JSONNode ReadJson()
-        {
-            string path = String.Concat(Application.dataPath,"/Data/data.json" );
-            StreamReader streamReader = new StreamReader(path);
-            string str = streamReader.ReadToEnd();
+            string path = String.Concat(Application.dataPath, "/Data/data.json" );
+            string str = new StreamReader(path).ReadToEnd();
             try
             {
                 var simpleJson = JSON.Parse(str);
-                return simpleJson["dailyProduct"];
+                mainView.ShowDailyPanel(simpleJson["dailyProduct"]);
             }
             catch (Exception e)
             {
                 Debug.Log(e);
-                return null;
             }
         }
     }

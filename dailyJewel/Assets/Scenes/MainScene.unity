@@ -784,6 +784,7 @@ GameObject:
   - component: {fileID: 970927486}
   - component: {fileID: 970927485}
   - component: {fileID: 970927489}
+  - component: {fileID: 970927490}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -885,7 +886,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7599afa2d6306451bb76b2a958291a5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attentionList: []
   dailyJewel: {fileID: 2084207305}
   dailyJuwelView: {fileID: 2084207309}
   coinImages:
@@ -897,6 +897,19 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ecee529edbb3a45adb7c1b5d22798cdf, type: 3}
   prefabCoin: {fileID: 7276270101042581873, guid: fa9d97b272d434aac8636ce1ecee5626,
     type: 3}
+  mainCtrl: {fileID: 970927490}
+--- !u!114 &970927490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970927484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68c0921ed1e8b44abb5cdd6192e2408d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   mainView: {fileID: 970927489}
 --- !u!1 &988412481
 GameObject:
@@ -1387,7 +1400,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 970927489}
-        m_MethodName: OnBtnClick
+        m_MethodName: ReadJson
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2105,7 +2118,7 @@ GameObject:
   - component: {fileID: 2084207307}
   - component: {fileID: 2084207309}
   m_Layer: 5
-  m_Name: dailyJewel
+  m_Name: pnlDailyJewel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2189,6 +2202,4 @@ MonoBehaviour:
   dailyLockItem: {fileID: 5157354469080244182, guid: fa22c8035cb724274aa6ebc92644ce96,
     type: 3}
   solderItem: {fileID: 143282442446370301, guid: 00e6dc9744942433092ae385fa5a7cff,
-    type: 3}
-  dailyNodeView: {fileID: 5335179955139175488, guid: 4eb25a1c30816467cbb86286325df850,
     type: 3}

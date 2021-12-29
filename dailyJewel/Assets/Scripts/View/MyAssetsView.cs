@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Globalization;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,28 +7,17 @@ namespace View
 {
     public class MyAssetsView : MonoBehaviour
     {
-        // Start is called before the first frame update
-        public Text coinNumLabel;
+        [SerializeField] private Text coinNumLabel;
 
         private int myCoins;
-        // private int myDiamonds;
 
         public void AddCoins(int coinValue)
         {
-            Debug.Log("调用加金币");
-            this.myCoins += coinValue;
-            this.ShowCoin(coinNumLabel, this.myCoins);
+            myCoins += coinValue;
+            ShowCoin(coinNumLabel, this.myCoins);
         }
 
-        // public void AddDiamonds(int diaValue)
-        // {
-        //     this.myDiamonds += diaValue;
-        //     this.ShowCoin(coinNumLabel, this.myCoins, 10, 0.1f);
-        // }
-
-        // Update is called once per frame
-
-        public void ShowCoin(Text coinText, int coinValue, int changeCount = 10, float spaceTime = 0.1f)
+        private void ShowCoin(Text coinText, int coinValue, int changeCount = 10, float spaceTime = 0.1f)
         {
             StopAllCoroutines();
             StartCoroutine(ShowCoinAni(coinText, coinValue, changeCount, spaceTime));
@@ -48,13 +38,13 @@ namespace View
                 }
             }
 
-            float onceAddCount = 1.0f / changeCount * (coinValue - lastGoldCount);
-            int i = 0;
+            var onceAddCount = 1.0f / changeCount * (coinValue - lastGoldCount);
+            var i = 0;
             while (i < changeCount)
             {
                 i++;
                 lastGoldCount += onceAddCount;
-                coinText.text = ((int) lastGoldCount).ToString();
+                coinText.text = lastGoldCount.ToString(CultureInfo.CurrentCulture);
                 yield return new WaitForSeconds(spaceTime);
             }
 
