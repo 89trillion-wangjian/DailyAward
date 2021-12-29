@@ -10,15 +10,13 @@ namespace View
     {
         [SerializeField] private Text coinNumLabel;
 
-        [SerializeField] private MyAssetsView myAssetsView;
-
         public static MyAssetsView Singleton;
 
         private int myCoins = 0;
 
         public void Awake()
         {
-            Singleton = myAssetsView;
+            Singleton = this;
         }
 
         public void AddCoins(int coinValue)

@@ -7,8 +7,6 @@ namespace View
     {
         [SerializeField] private Image image;
 
-        [SerializeField] private PlayCoinView coinView;
-
         private GameObject myAssets;
 
         private readonly float speed = 100.0f;
@@ -19,13 +17,12 @@ namespace View
 
         public void Awake()
         {
-            singleton = coinView;
+            singleton = this;
         }
 
         public void Start()
         {
             myAssets = MyAssetsView.Singleton.gameObject;
-            Debug.Log(myAssets);
             PlayCoinAni();
         }
 

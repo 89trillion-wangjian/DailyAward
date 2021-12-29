@@ -18,7 +18,6 @@ namespace View
 
         [SerializeField] private MainCtrl mainCtrl;
 
-        [SerializeField] private MainView mainView;
 
         public static MainView Singleton;
 
@@ -30,7 +29,7 @@ namespace View
 
         public void Awake()
         {
-            Singleton = mainView;
+            Singleton = this;
         }
 
         /// <summary>

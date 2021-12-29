@@ -24,8 +24,6 @@ namespace View
 
         [SerializeField] private Text countLabel;
 
-        [SerializeField] private DailyNodeView dailyNodeView;
-
         private int rewardType;
 
         private JSONNode itemData;
@@ -34,7 +32,7 @@ namespace View
 
         private void Awake()
         {
-            Singleton = dailyNodeView;
+            Singleton = this;
             EventCenter.AddListener<JSONNode>(EventType.DailyJewelInit, InitData);
         }
 
