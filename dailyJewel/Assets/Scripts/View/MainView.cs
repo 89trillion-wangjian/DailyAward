@@ -16,13 +16,11 @@ namespace View
 
         [SerializeField] private GameObject prefabCoin;
 
-        [FormerlySerializedAs("mainCtrl")] [SerializeField] private MainController mainController;
+        [SerializeField] private MainController mainController;
 
         [SerializeField] private GameObject toast;
 
         public static MainView Singleton;
-
-        private int coinCount;
 
         private int coinIndex;
 
@@ -32,13 +30,17 @@ namespace View
         }
 
         /// <summary>
-        /// 读取json数据，成功后打开宝箱页面
+        /// 点击按钮，读取json数据，成功后打开宝箱页面
         /// </summary>
         public void ReadJson()
         {
             mainController.ReadJson();
         }
-
+        
+        /// <summary>
+        /// 打开宝箱页面
+        /// </summary>
+        /// <param name="str">数据</param>
         public void ShowDailyPanel(JSONNode str)
         {
             dailyJewel.SetActive(true);
@@ -49,7 +51,11 @@ namespace View
         {
             dailyJewel.SetActive(false);
         }
-
+        
+        /// <summary>
+        /// 创建金币动画
+        /// </summary>
+        /// <param name="createCoinNum"></param>
         public void CreateCoin(int createCoinNum = 5)
         {
             StartCoroutine(Create(createCoinNum));
@@ -62,16 +68,9 @@ namespace View
             {
                 i++;
                 Instantiate(prefabCoin, gameObject.transform, false);
-                coinCount++;
                 PlayCoinView.Singleton.ChangeImage(coinImages[i % 6]);
                 yield return new WaitForSeconds(0.1f);
             }
-        }
-
-
-        public void ReduceCoin()
-        {
-            coinCount--;
         }
 
         /// <summary>

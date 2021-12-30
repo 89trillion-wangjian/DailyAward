@@ -37,7 +37,6 @@ namespace View
 
         private void DestroyCoin()
         {
-            MainView.Singleton.ReduceCoin();
             Destroy(this.gameObject);
         }
 

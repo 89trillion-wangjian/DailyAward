@@ -41,11 +41,11 @@ namespace View
         {
             if (GameModel.CreateInstance().MyCoinCount < needCoin)
             {
-                EventCenter.PostEvent(Entity.EventType.ShowToask, "金币不足");
+                EventCenter.PostEvent(EventType.ShowToask, "金币不足");
                 return;
             }
             //扣金币
-            EventCenter.PostEvent(Entity.EventType.FreshCoinCount, -needCoin);
+            EventCenter.PostEvent(EventType.FreshCoinCount, -needCoin);
             
             itemData["isPurchased"] = "1";
             FreshDisplay();
@@ -53,7 +53,7 @@ namespace View
             {
                 string coinNum = itemData.GetValueOrDefault("num", 1);
                 
-                EventCenter.PostEvent(Entity.EventType.FreshCoinCount, Convert.ToInt32(coinNum));
+                EventCenter.PostEvent(EventType.FreshCoinCount, Convert.ToInt32(coinNum));
                 MainView.Singleton.CreateCoin(Math.Min(Convert.ToInt32(coinNum), 15));
             }
         }
