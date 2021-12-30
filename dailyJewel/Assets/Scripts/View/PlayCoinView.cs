@@ -24,7 +24,9 @@ namespace View
             myAssets = MyAssetsView.Singleton.coinImg;
             MoveCoin();
         }
-
+        /// <summary>
+        /// 金币动效
+        /// </summary>
         private void MoveCoin()
         {
             transform.localScale = new Vector3(0, 0, 0);

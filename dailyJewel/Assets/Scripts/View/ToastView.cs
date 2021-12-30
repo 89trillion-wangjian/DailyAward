@@ -13,7 +13,11 @@ namespace View
         {
             Singleton = this;
         }
-
+        
+        /// <summary>
+        /// 更改toast提示文本
+        /// </summary>
+        /// <param name="toastTxt"></param>
         public void ChangeToast(string toastTxt)
         {
             this.toast.text = toastTxt;
