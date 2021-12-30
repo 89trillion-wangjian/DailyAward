@@ -1,17 +1,16 @@
 ﻿using System;
 using Entity;
+using Model;
 using SimpleJSON;
 using UnityEngine;
 using UnityEngine.UI;
 using Utils;
 using EventType = Entity.EventType;
-using Random = UnityEngine.Random;
 
 namespace View
 {
     public class DailyNodeView : MonoBehaviour
     {
-        
         [SerializeField] private GameObject btnBuy;
 
         [SerializeField] private GameObject hasBuy;
@@ -30,29 +29,32 @@ namespace View
 
         public static DailyNodeView Singleton;
 
+        private int needCoin = 0;
+
         private void Awake()
         {
             Singleton = this;
             EventCenter.AddListener<JSONNode>(EventType.DailyJewelInit, InitData);
         }
 
-        public void OnBtnBuy()
+        public void BuyCard()
         {
+            if (GameModel.CreateInstance().MyCoinCount < needCoin)
+            {
+                EventCenter.PostEvent(Entity.EventType.ShowToask, "金币不足");
+                return;
+            }
+            //扣金币
+            EventCenter.PostEvent(Entity.EventType.FreshCoinCount, -needCoin);
+            
             itemData["isPurchased"] = "1";
             FreshDisplay();
-            if (rewardType == (int) RewardType.Coins)
+            if (rewardType == (int) RewardType.Diamonds)
             {
                 string coinNum = itemData.GetValueOrDefault("num", 1);
-                MyAssetsView.Singleton.AddCoins(Convert.ToInt32(coinNum));
-
-                var myCanvas = GameObject.Find("Canvas");
-                myCanvas.SendMessage("CreateCoin");
-            }
-            else if (rewardType == (int) RewardType.Diamonds)
-            {
-                string diaNum = itemData.GetValueOrDefault("num", 1);
-                MyAssetsView.Singleton.AddCoins(Convert.ToInt32(diaNum));
-                MainView.Singleton.CreateCoin();
+                
+                EventCenter.PostEvent(Entity.EventType.FreshCoinCount, Convert.ToInt32(coinNum));
+                MainView.Singleton.CreateCoin(Math.Min(Convert.ToInt32(coinNum), 15));
             }
         }
 
@@ -82,15 +84,7 @@ namespace View
             string subType = itemData.GetValueOrDefault("subType", null);
             if (string.IsNullOrEmpty(subType))
             {
-                float randow = Random.Range(0, 1.0f);
-                if (randow > 0.5)
-                {
-                    cardImage.sprite = Resources.Load("awards/coin_1", typeof(Sprite)) as Sprite;
-                }
-                else
-                {
-                    cardImage.sprite = Resources.Load("awards/diamond_2", typeof(Sprite)) as Sprite;
-                }
+                cardImage.sprite = Resources.Load("awards/coin_1", typeof(Sprite)) as Sprite;
             }
             else
             {
@@ -110,6 +104,7 @@ namespace View
             //货币
             string costGold = itemData.GetValueOrDefault("costGold", 1);
             string costGem = itemData.GetValueOrDefault("costGem", 1);
+            needCoin = int.Parse(costGold);
             if (Convert.ToInt64(costGold) > 0)
             {
                 cardColdLabel.text = costGold;

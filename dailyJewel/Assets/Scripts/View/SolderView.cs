@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using Model;
+using UnityEngine;
+using Utils;
 
 namespace View
 {
@@ -6,8 +9,10 @@ namespace View
     {
         public void GetAward()
         {
-            MainView.Singleton.CreateCoin();
-            MyAssetsView.Singleton.AddCoins(5);
+            ++GameModel.CreateInstance().SolderBuyTimes;
+            var createCoinNum = Math.Min(15, GameModel.CreateInstance().SolderBuyTimes * 5);
+            MainView.Singleton.CreateCoin(createCoinNum);
+            EventCenter.PostEvent(Entity.EventType.FreshCoinCount, GameModel.CreateInstance().SolderBuyTimes * 5);
         }
     }
 }

@@ -1,0 +1,32 @@
+﻿using UnityEngine;
+using UnityEngine.UI;
+
+namespace View
+{
+    public class ToastView : MonoBehaviour
+    {
+        [SerializeField] private Text toast;
+
+        public static ToastView Singleton = null;
+
+        public void Awake()
+        {
+            Singleton = this;
+        }
+
+        public void ChangeToast(string toastTxt)
+        {
+            this.toast.text = toastTxt;
+        }
+
+        public void Start()
+        {
+            Invoke(nameof(CloseToast), 2);
+        }
+
+        public void CloseToast()
+        {
+            Destroy(this.gameObject);
+        }
+    }
+}

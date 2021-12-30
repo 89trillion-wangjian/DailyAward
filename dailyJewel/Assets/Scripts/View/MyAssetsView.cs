@@ -1,6 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Globalization;
+﻿using System.Collections;
+using Model;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,24 +7,23 @@ namespace View
 {
     public class MyAssetsView : MonoBehaviour
     {
-        [SerializeField] private Text coinNumLabel;
+        public Text coinNumLabel;
 
         public static MyAssetsView Singleton;
 
-        private int myCoins = 0;
+        public GameObject coinImg;
 
         public void Awake()
         {
             Singleton = this;
         }
 
-        public void AddCoins(int coinValue)
+        public void Start()
         {
-            myCoins += coinValue;
-            ShowCoin(coinNumLabel, this.myCoins);
+            coinNumLabel.text = GameModel.CreateInstance().MyCoinCount.ToString();
         }
 
-        private void ShowCoin(Text coinText, int coinValue, int changeCount = 10, float spaceTime = 0.1f)
+        public void ShowCoinChange(Text coinText, int coinValue, int changeCount = 10, float spaceTime = 0.1f)
         {
             StopAllCoroutines();
             StartCoroutine(ShowCoinAni(coinText, coinValue, changeCount, spaceTime));
@@ -52,7 +50,7 @@ namespace View
             {
                 i++;
                 lastGoldCount += onceAddCount;
-                coinText.text = ((int)lastGoldCount).ToString();
+                coinText.text = ((int) lastGoldCount).ToString();
                 yield return new WaitForSeconds(spaceTime);
             }
 

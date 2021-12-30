@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using DG.Tweening;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace View
@@ -9,21 +10,33 @@ namespace View
 
         private GameObject myAssets;
 
-        private readonly float speed = 100.0f;
-
         private float waitTime;
 
-        public static PlayCoinView singleton;
+        public static PlayCoinView Singleton;
 
         public void Awake()
         {
-            singleton = this;
+            Singleton = this;
         }
 
         public void Start()
         {
-            myAssets = MyAssetsView.Singleton.gameObject;
-            PlayCoinAni();
+            myAssets = MyAssetsView.Singleton.coinImg;
+            MoveCoin();
+        }
+
+        private void MoveCoin()
+        {
+            transform.localScale = new Vector3(0, 0, 0);
+            transform.DOScale(new Vector3(1, 1, 1), 0.1f).SetAutoKill(true);
+            Tweener t = transform.DOMove(myAssets.transform.position, 0.3f).SetDelay(0.2f);
+            t.onComplete = DestroyCoin;
+        }
+
+        private void DestroyCoin()
+        {
+            MainView.Singleton.ReduceCoin();
+            Destroy(this.gameObject);
         }
 
         public void ChangeImage(Sprite sp)
@@ -31,33 +44,6 @@ namespace View
             image.sprite = sp;
             image.rectTransform.sizeDelta
                 = new Vector2(image.sprite.rect.width * 0.7f, image.sprite.rect.height * 0.7f);
-        }
-
-        private void PlayCoinAni()
-        {
-            if (!this.gameObject)
-            {
-                return;
-            }
-
-            if (Vector3.Distance(transform.position, myAssets.transform.position) > .6f)
-            {
-                Vector3 directionOfTravel = myAssets.transform.position - transform.position;
-                directionOfTravel.Normalize();
-
-                this.transform.Translate(
-                    (directionOfTravel.x * speed * Time.deltaTime),
-                    (directionOfTravel.y * speed * Time.deltaTime),
-                    (directionOfTravel.z * speed * Time.deltaTime),
-                    Space.World);
-            }
-            else
-            {
-                MainView.Singleton.ReduceCoin();
-                Destroy(this.gameObject);
-            }
-
-            Invoke(nameof(PlayCoinAni), 0.1f);
         }
     }
 }

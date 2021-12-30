@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using Controller;
 using SimpleJSON;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace View
 {
@@ -16,16 +16,15 @@ namespace View
 
         [SerializeField] private GameObject prefabCoin;
 
-        [SerializeField] private MainCtrl mainCtrl;
+        [FormerlySerializedAs("mainCtrl")] [SerializeField] private MainController mainController;
 
+        [SerializeField] private GameObject toast;
 
         public static MainView Singleton;
 
         private int coinCount;
 
         private int coinIndex;
-
-        private readonly int maxCoin = 15;
 
         public void Awake()
         {
@@ -37,7 +36,7 @@ namespace View
         /// </summary>
         public void ReadJson()
         {
-            mainCtrl.ReadJson();
+            mainController.ReadJson();
         }
 
         public void ShowDailyPanel(JSONNode str)
@@ -51,10 +50,9 @@ namespace View
             dailyJewel.SetActive(false);
         }
 
-        public void CreateCoin()
+        public void CreateCoin(int createCoinNum = 5)
         {
-            int createNum = Math.Min(5, maxCoin - coinCount);
-            StartCoroutine(Create(createNum));
+            StartCoroutine(Create(createCoinNum));
         }
 
         IEnumerator Create(int creatCount)
@@ -63,10 +61,9 @@ namespace View
             while (i < creatCount)
             {
                 i++;
-                GameObject coin = Instantiate(prefabCoin);
-                if (gameObject != null) coin.transform.SetParent(gameObject.transform, false);
+                Instantiate(prefabCoin, gameObject.transform, false);
                 coinCount++;
-                PlayCoinView.singleton.ChangeImage(coinImages[i % 6]);
+                PlayCoinView.Singleton.ChangeImage(coinImages[i % 6]);
                 yield return new WaitForSeconds(0.1f);
             }
         }
@@ -75,6 +72,15 @@ namespace View
         public void ReduceCoin()
         {
             coinCount--;
+        }
+
+        /// <summary>
+        /// 提示
+        /// </summary>
+        public void ShowToast(string toastTxt)
+        {
+            Instantiate(toast, this.transform, false);
+            ToastView.Singleton.ChangeToast(toastTxt);
         }
     }
 }

@@ -2,21 +2,26 @@
 using System.IO;
 using SimpleJSON;
 using UnityEngine;
+using Utils;
 using View;
 
 namespace Controller
 {
-    public class MainCtrl : MonoBehaviour
+    public class MainController : MonoBehaviour
     {
-        
         [SerializeField] private MainView mainView;
-        
-       /// <summary>
-       ///  读取json数据
-       /// </summary>
+
+        public void Awake()
+        {
+            EventCenter.AddListener<string>(Entity.EventType.ShowToask, ShowToast);
+        }
+
+        /// <summary>
+        ///  读取json数据
+        /// </summary>
         public void ReadJson()
         {
-            string path = String.Concat(Application.dataPath, "/Data/data.json" );
+            string path = String.Concat(Application.dataPath, "/Data/data.json");
             string str = new StreamReader(path).ReadToEnd();
             try
             {
@@ -27,6 +32,11 @@ namespace Controller
             {
                 Debug.Log(e);
             }
+        }
+
+        private void ShowToast(string toast)
+        {
+            mainView.ShowToast(toast);
         }
     }
 }

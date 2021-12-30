@@ -223,7 +223,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -111}
+  m_AnchoredPosition: {x: 0, y: -110}
   m_SizeDelta: {x: 1000, y: 1534}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &152318497
@@ -471,7 +471,7 @@ GameObject:
   - component: {fileID: 729151502}
   - component: {fileID: 729151503}
   m_Layer: 5
-  m_Name: daily_node
+  m_Name: dailyNode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -493,7 +493,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 500, y: -125}
+  m_AnchoredPosition: {x: 500, y: -124}
   m_SizeDelta: {x: 830, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &729151502
@@ -546,7 +546,7 @@ GameObject:
   - component: {fileID: 764957481}
   - component: {fileID: 764957482}
   m_Layer: 5
-  m_Name: solder_node
+  m_Name: solderNode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -644,7 +644,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 29, y: 0}
+  m_AnchoredPosition: {x: 30, y: 0}
   m_SizeDelta: {x: 100, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &857405613
@@ -897,8 +897,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ecee529edbb3a45adb7c1b5d22798cdf, type: 3}
   prefabCoin: {fileID: 7276270101042581873, guid: fa9d97b272d434aac8636ce1ecee5626,
     type: 3}
-  mainCtrl: {fileID: 970927490}
-  mainView: {fileID: 970927489}
+  mainController: {fileID: 970927490}
+  toast: {fileID: 7436763959043975807, guid: a37ebcbeb48874843ab0f8da11b8f85f, type: 3}
 --- !u!114 &970927490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1087,6 +1087,7 @@ GameObject:
   - component: {fileID: 1032771501}
   - component: {fileID: 1032771502}
   - component: {fileID: 1032771503}
+  - component: {fileID: 1032771504}
   m_Layer: 5
   m_Name: myAssets
   m_TagString: Untagged
@@ -1166,7 +1167,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinNumLabel: {fileID: 857405613}
-  myAssetsView: {fileID: 1032771503}
+  coinImg: {fileID: 1922075297}
+--- !u!114 &1032771504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1032771499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14e93c2555539403fb305626adfc5b52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1078750976
 GameObject:
   m_ObjectHideFlags: 0
@@ -1202,8 +1215,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 500, y: -57.5}
-  m_SizeDelta: {x: 935.2, y: 115}
+  m_AnchoredPosition: {x: 500, y: -58}
+  m_SizeDelta: {x: 936, y: 115}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1078750978
 MonoBehaviour:
@@ -1459,7 +1472,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1371240124}
   m_Layer: 5
-  m_Name: my_coin
+  m_Name: myCoin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1523,7 +1536,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 300, y: 631}
+  m_AnchoredPosition: {x: 300, y: 630}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1385282405
@@ -1652,7 +1665,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 500, y: -192.5}
+  m_AnchoredPosition: {x: 500, y: -193}
   m_SizeDelta: {x: 935, y: 115}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1454159215
@@ -1818,7 +1831,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 7.8}
+  m_AnchoredPosition: {x: 0, y: 8}
   m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1754937457
@@ -1989,7 +2002,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -81, y: 0}
+  m_AnchoredPosition: {x: -80, y: 0}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1922075299
@@ -2041,7 +2054,7 @@ GameObject:
   - component: {fileID: 1966613563}
   - component: {fileID: 1966613562}
   m_Layer: 5
-  m_Name: Text
+  m_Name: txtDailyJewel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
