@@ -44,15 +44,16 @@ namespace View
                 EventCenter.PostEvent(EventType.ShowToask, "金币不足");
                 return;
             }
+
             //扣金币
             EventCenter.PostEvent(EventType.FreshCoinCount, -needCoin);
-            
+
             itemData["isPurchased"] = "1";
             FreshDisplay();
             if (rewardType == (int) RewardType.Diamonds)
             {
                 string coinNum = itemData.GetValueOrDefault("num", 1);
-                
+
                 EventCenter.PostEvent(EventType.FreshCoinCount, Convert.ToInt32(coinNum));
                 MainView.Singleton.CreateCoin(Math.Min(Convert.ToInt32(coinNum), 15));
             }
@@ -82,14 +83,8 @@ namespace View
 
             //刷新card
             string subType = itemData.GetValueOrDefault("subType", null);
-            if (string.IsNullOrEmpty(subType))
-            {
-                cardImage.sprite = Resources.Load("awards/coin_1", typeof(Sprite)) as Sprite;
-            }
-            else
-            {
-                cardImage.sprite = Resources.Load("cards/" + subType, typeof(Sprite)) as Sprite;
-            }
+            cardImage.sprite =
+                Resources.Load<Sprite>(string.IsNullOrEmpty(subType) ? "awards/coin_1" : $"cards/{subType}");
 
             if (cardImage.sprite != null)
             {

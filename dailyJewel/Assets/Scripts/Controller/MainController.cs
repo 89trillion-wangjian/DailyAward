@@ -21,7 +21,7 @@ namespace Controller
         /// </summary>
         public void ReadJson()
         {
-            string path = String.Concat(Application.dataPath, "/Data/data.json");
+            string path = $"{Application.dataPath}/Data/data.json";
             string str = new StreamReader(path).ReadToEnd();
             try
             {

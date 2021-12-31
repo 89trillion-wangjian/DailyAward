@@ -19,27 +19,6 @@ namespace Utils
         /// 发送事件
         /// </summary>
         /// <param name="eventName">事件名</param>
-        [Obsolete("已过时，请使用PostEvent函数")]
-        public static void SendEvent(string eventName)
-        {
-            PostEvent(eventName);
-        }
-
-        /// <summary>
-        /// 发送事件
-        /// </summary>
-        /// <param name="eventName">事件名</param>
-        /// <param name="value">数据</param>
-        [Obsolete("已过时，请使用PostEvent函数")]
-        public static void SendEvent(string eventName, object value)
-        {
-            PostEvent(eventName, value);
-        }
-
-        /// <summary>
-        /// 发送事件
-        /// </summary>
-        /// <param name="eventName">事件名</param>
         public static void PostEvent(string eventName)
         {
             if (_eventHandles == null) return;
@@ -54,13 +33,12 @@ namespace Utils
                 }
                 else if (d is EventHandle<object>)
                 {
-                    //兼容之前旧版本EgoEventCenter逻辑
                     EventHandle<object> call2 = d as EventHandle<object>;
                     call2(null);
                 }
                 else
                 {
-                    throw new Exception(string.Format("事件{0}包含着不同类型的委托", eventName));
+                    throw new Exception($"事件{eventName}包含着不同类型的委托");
                 }
             }
         }
@@ -85,7 +63,7 @@ namespace Utils
                 }
                 else
                 {
-                    throw new Exception(string.Format("事件{0}包含着不同类型的委托{1}", eventName, d.GetType()));
+                    throw new Exception($"事件{eventName}包含着不同类型的委托{d.GetType()}");
                 }
             }
         }
@@ -112,7 +90,7 @@ namespace Utils
                 }
                 else
                 {
-                    throw new Exception(string.Format("事件{0}包含着不同类型的委托{1}", eventName, d.GetType()));
+                    throw new Exception($"事件{eventName}包含着不同类型的委托{d.GetType()}");
                 }
             }
         }
@@ -141,7 +119,7 @@ namespace Utils
                 }
                 else
                 {
-                    throw new Exception(string.Format("事件{0}包含着不同类型的委托{1}", eventName, d.GetType()));
+                    throw new Exception($"事件{eventName}包含着不同类型的委托{d.GetType()}");
                 }
             }
         }
@@ -206,28 +184,7 @@ namespace Utils
             OnListeningAdd(eventName, handle);
             _eventHandles[eventName] = (EventHandle<T1, T2, T3>) _eventHandles[eventName] + handle;
         }
-
-        /// <summary>
-        /// 移除事件监听
-        /// </summary>
-        /// <param name="eventName">事件名</param>
-        /// <param name="handle">回调</param>
-        [Obsolete("已过时，请使用RemoveListener函数")]
-        public static void RemoveHandle(string eventName, EventHandle handle)
-        {
-            RemoveListener(eventName, handle);
-        }
-
-        /// <summary>
-        /// 移除事件监听
-        /// </summary>
-        /// <param name="eventName">事件名</param>
-        /// <param name="handle">回调</param>
-        [Obsolete("已过时，请使用RemoveListener函数")]
-        public static void RemoveHandle(string eventName, EventHandle<object> handle)
-        {
-            RemoveListener<object>(eventName, handle);
-        }
+        
 
         /// <summary>
         /// 移除事件监听
@@ -319,7 +276,7 @@ namespace Utils
             Delegate d = _eventHandles[eventName];
             if (d != null && d.GetType() != callback.GetType())
             {
-                throw new Exception(string.Format("尝试添加两种不同类型的委托,委托1为{0}，委托2为{1}", d.GetType(), callback.GetType()));
+                throw new Exception($"尝试添加两种不同类型的委托,委托1为{d.GetType()}，委托2为{callback.GetType()}");
             }
         }
 
@@ -330,14 +287,12 @@ namespace Utils
                 Delegate d = _eventHandles[eventName];
                 if (d != null && d.GetType() != callback.GetType())
                 {
-                    throw new Exception(string.Format("尝试移除不同类型的事件，事件名{0},已存储的委托类型{1},当前事件委托{2}", eventName,
-                        d.GetType(),
-                        callback.GetType()));
+                    throw new Exception($"尝试移除不同类型的事件，事件名{eventName},已存储的委托类型{d.GetType()},当前事件委托{callback.GetType()}");
                 }
             }
             else
             {
-                throw new Exception(string.Format("没有事件名{0}", eventName));
+                throw new Exception($"没有事件名{eventName}");
             }
         }
     }
