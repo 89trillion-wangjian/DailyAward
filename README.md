@@ -24,11 +24,11 @@
 ## 3.代码逻辑分层
 |文件夹        |主要职责                  |
 |-----------   |----------              |
-|Controller     |处理逻辑，读取数据                  |
+|Controller     |处理逻辑                 |
 |Entity       |静态类，枚举等              |
-|Model       |存放玩家数据            |
+|Model       |存放玩家数据，设置委托            |
 |Utils          |事件传递脚本，工具  |
-|View         |ui类              |
+|View         |委托事件绑定，处理ui显示              |
 
 ## 4. 序列图
 ![sequence](https://github.com/89trillion-wangjian/DailyAward/blob/master/seq.png)
