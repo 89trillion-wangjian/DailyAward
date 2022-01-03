@@ -1,11 +1,5 @@
-﻿using System;
-using Entity;
-using Model;
-using SimpleJSON;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
-using Utils;
-using EventType = Entity.EventType;
 
 namespace View
 {
@@ -23,66 +17,30 @@ namespace View
 
         [SerializeField] private Text countLabel;
 
-        private int rewardType;
 
-        private JSONNode itemData;
-
-        public static DailyNodeView Singleton;
-
-        private int needCoin = 0;
-
-        private void Awake()
+        public void ChangeBuyStatus(bool isBuy)
         {
-            Singleton = this;
-            EventCenter.AddListener<JSONNode>(EventType.DailyJewelInit, InitData);
+            btnBuy.SetActive(isBuy);
+            hasBuy.SetActive(!isBuy);
         }
 
-        public void BuyCard()
+        public void ShowCoin(string txt)
         {
-            if (GameModel.CreateInstance().MyCoinCount < needCoin)
+            if (txt.Equals("免费"))
             {
-                EventCenter.PostEvent(EventType.ShowToask, "金币不足");
-                return;
+                moneyImage.SetActive(false);
             }
 
-            //扣金币
-            EventCenter.PostEvent(EventType.FreshCoinCount, -needCoin);
-
-            itemData["isPurchased"] = "1";
-            FreshDisplay();
-            if (rewardType == (int) RewardType.Diamonds)
-            {
-                string coinNum = itemData.GetValueOrDefault("num", 1);
-
-                EventCenter.PostEvent(EventType.FreshCoinCount, Convert.ToInt32(coinNum));
-                MainView.Singleton.CreateCoin(Math.Min(Convert.ToInt32(coinNum), 15));
-            }
+            cardColdLabel.text = txt;
         }
 
-
-        public void InitData(JSONNode jsonNode)
+        public void ShowCount(string count)
         {
-            this.itemData = jsonNode;
-            this.InitDisplay();
+            countLabel.text = $"x{count}";
         }
 
-        private void FreshDisplay()
+        public void ChangeCardImage(string subType)
         {
-            string value = itemData.GetValueOrDefault("isPurchased", 1);
-            btnBuy.SetActive(Convert.ToInt16(value) == -1);
-            hasBuy.SetActive(Convert.ToInt16(value) == 1);
-        }
-
-        private void InitDisplay()
-        {
-            string type = itemData.GetValueOrDefault("type", 1);
-            rewardType = Convert.ToInt32(type);
-            string value = itemData.GetValueOrDefault("isPurchased", 1);
-            btnBuy.SetActive(Convert.ToInt16(value) == -1);
-            hasBuy.SetActive(Convert.ToInt16(value) == 1);
-
-            //刷新card
-            string subType = itemData.GetValueOrDefault("subType", null);
             cardImage.sprite =
                 Resources.Load<Sprite>(string.IsNullOrEmpty(subType) ? "awards/coin_1" : $"cards/{subType}");
 
@@ -90,28 +48,6 @@ namespace View
             {
                 cardImage.rectTransform.sizeDelta
                     = new Vector2(cardImage.sprite.rect.width * 0.65f, cardImage.sprite.rect.height * 0.65f);
-            }
-
-            //数量
-            string count = itemData.GetValueOrDefault("num", 1);
-            countLabel.text = string.Concat("x", count);
-
-            //货币
-            string costGold = itemData.GetValueOrDefault("costGold", 1);
-            string costGem = itemData.GetValueOrDefault("costGem", 1);
-            needCoin = int.Parse(costGold);
-            if (Convert.ToInt64(costGold) > 0)
-            {
-                cardColdLabel.text = costGold;
-            }
-            else if (Convert.ToInt64(costGem) > 0)
-            {
-                cardColdLabel.text = costGem;
-            }
-            else
-            {
-                moneyImage.SetActive(false);
-                cardColdLabel.text = "免费";
             }
         }
     }

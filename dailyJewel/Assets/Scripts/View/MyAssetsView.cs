@@ -7,6 +7,7 @@ namespace View
 {
     public class MyAssetsView : MonoBehaviour
     {
+
         public Text coinNumLabel;
 
         public static MyAssetsView Singleton;
@@ -20,7 +21,13 @@ namespace View
 
         public void Start()
         {
-            coinNumLabel.text = GameModel.CreateInstance().MyCoinCount.ToString();
+            DailyModel.CreateInstance().OnCoinChange += ChangeCount;
+            coinNumLabel.text = DailyModel.CreateInstance().MyCoinCount.ToString();
+        }
+
+        public void ChangeCount(int value)
+        {
+            this.ShowCoinChange(coinNumLabel, DailyModel.CreateInstance().MyCoinCount);
         }
 
         public void ShowCoinChange(Text coinText, int coinValue, int changeCount = 10, float spaceTime = 0.1f)

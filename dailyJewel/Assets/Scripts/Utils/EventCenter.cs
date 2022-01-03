@@ -3,15 +3,15 @@ using System.Collections.Generic;
 
 namespace Utils
 {
-    public class EventCenter
+    public static class EventCenter
     {
         public delegate void EventHandle();
 
-        public delegate void EventHandle<T>(T value);
+        public delegate void EventHandle<in T>(T value);
 
-        public delegate void EventHandle<T1, T2>(T1 value1, T2 value2);
+        public delegate void EventHandle<in T1, in T2>(T1 value1, T2 value2);
 
-        public delegate void EventHandle<T1, T2, T3>(T1 value1, T2 value2, T3 value3);
+        public delegate void EventHandle<in T1, in T2, in T3>(T1 value1, T2 value2, T3 value3);
 
         private static Dictionary<string, Delegate> _eventHandles;
 
@@ -25,7 +25,11 @@ namespace Utils
             Delegate d;
             if (_eventHandles.TryGetValue(eventName, out d))
             {
-                if (d == null) return;
+                if (d == null)
+                {
+                    return;
+                }
+
                 EventHandle call = d as EventHandle;
                 if (call != null)
                 {
@@ -55,7 +59,11 @@ namespace Utils
             Delegate d;
             if (_eventHandles.TryGetValue(eventName, out d))
             {
-                if (d == null) return;
+                if (d == null)
+                {
+                    return;
+                }
+
                 EventHandle<T> call = d as EventHandle<T>;
                 if (call != null)
                 {
@@ -78,11 +86,19 @@ namespace Utils
         /// <typeparam name="T2"></typeparam>
         public static void PostEvent<T1, T2>(string eventName, T1 value1, T2 value2)
         {
-            if (_eventHandles == null) return;
+            if (_eventHandles == null)
+            {
+                return;
+            }
+
             Delegate d;
             if (_eventHandles.TryGetValue(eventName, out d))
             {
-                if (d == null) return;
+                if (d == null)
+                {
+                    return;
+                }
+
                 EventHandle<T1, T2> call = d as EventHandle<T1, T2>;
                 if (call != null)
                 {
@@ -111,7 +127,11 @@ namespace Utils
             Delegate d;
             if (_eventHandles.TryGetValue(eventName, out d))
             {
-                if (d == null) return;
+                if (d == null)
+                {
+                    return;
+                }
+
                 EventHandle<T1, T2, T3> call = d as EventHandle<T1, T2, T3>;
                 if (call != null)
                 {
@@ -198,7 +218,11 @@ namespace Utils
                 return;
             }
 
-            if (!_eventHandles.ContainsKey(eventName)) return;
+            if (!_eventHandles.ContainsKey(eventName))
+            {
+                return;
+            }
+
             OnListeningRemove(eventName, handle);
             _eventHandles[eventName] = (EventHandle) _eventHandles[eventName] - handle;
         }
@@ -225,7 +249,11 @@ namespace Utils
                 return;
             }
 
-            if (!_eventHandles.ContainsKey(eventName)) return;
+            if (!_eventHandles.ContainsKey(eventName))
+            {
+                return;
+            }
+
             OnListeningRemove(eventName, handle);
             _eventHandles[eventName] = (EventHandle<T>) _eventHandles[eventName] - handle;
         }
@@ -242,7 +270,11 @@ namespace Utils
                 return;
             }
 
-            if (!_eventHandles.ContainsKey(eventName)) return;
+            if (!_eventHandles.ContainsKey(eventName))
+            {
+                return;
+            }
+
             OnListeningRemove(eventName, handle);
             _eventHandles[eventName] = (EventHandle<T1, T2>) _eventHandles[eventName] - handle;
         }
@@ -259,7 +291,11 @@ namespace Utils
                 return;
             }
 
-            if (!_eventHandles.ContainsKey(eventName)) return;
+            if (!_eventHandles.ContainsKey(eventName))
+            {
+                return;
+            }
+
             OnListeningRemove(eventName, handle);
             _eventHandles[eventName] = (EventHandle<T1, T2, T3>) _eventHandles[eventName] - handle;
         }

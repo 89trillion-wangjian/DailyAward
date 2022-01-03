@@ -18,8 +18,7 @@ namespace Controller
         /// <param name="coinValue"></param>
         private void RefreshCoinCount(int coinValue)
         {
-            GameModel.CreateInstance().MyCoinCount += coinValue;
-            MyAssetsView.Singleton.ShowCoinChange(MyAssetsView.Singleton.coinNumLabel, GameModel.CreateInstance().MyCoinCount);
+            MyAssetsView.Singleton.ShowCoinChange(MyAssetsView.Singleton.coinNumLabel, DailyModel.CreateInstance().MyCoinCount);
         }
 
         public void OnDestroy()

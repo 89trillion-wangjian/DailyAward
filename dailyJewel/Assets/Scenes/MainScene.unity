@@ -784,7 +784,7 @@ GameObject:
   - component: {fileID: 970927486}
   - component: {fileID: 970927485}
   - component: {fileID: 970927489}
-  - component: {fileID: 970927490}
+  - component: {fileID: 970927491}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -883,7 +883,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 970927484}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7599afa2d6306451bb76b2a958291a5c, type: 3}
+  m_Script: {fileID: 11500000, guid: a291dc79085d8704bb061c829046e7a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  view: {fileID: 970927491}
+--- !u!114 &970927491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970927484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22012b200062a68439dab2e89b05d1a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dailyJewel: {fileID: 2084207305}
@@ -897,21 +910,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ecee529edbb3a45adb7c1b5d22798cdf, type: 3}
   prefabCoin: {fileID: 7276270101042581873, guid: fa9d97b272d434aac8636ce1ecee5626,
     type: 3}
-  mainController: {fileID: 970927490}
   toast: {fileID: 7436763959043975807, guid: a37ebcbeb48874843ab0f8da11b8f85f, type: 3}
---- !u!114 &970927490
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 970927484}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68c0921ed1e8b44abb5cdd6192e2408d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainView: {fileID: 970927489}
 --- !u!1 &988412481
 GameObject:
   m_ObjectHideFlags: 0
@@ -1086,8 +1085,8 @@ GameObject:
   - component: {fileID: 1032771500}
   - component: {fileID: 1032771501}
   - component: {fileID: 1032771502}
-  - component: {fileID: 1032771503}
   - component: {fileID: 1032771504}
+  - component: {fileID: 1032771503}
   m_Layer: 5
   m_Name: myAssets
   m_TagString: Untagged
@@ -1415,7 +1414,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 970927489}
-        m_MethodName: ReadJson
+        m_MethodName: ShowDailyPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1620,7 +1619,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 970927489}
-        m_MethodName: CloseView
+        m_MethodName: ClosePanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -5,5 +5,6 @@
         public static string DailyJewelInit = "DailyJewelInit";
         public static string ShowToask = "ShowToask";
         public static string FreshCoinCount = "FreshCoinCount";
+        public static string CoinChange = "CoinChange";
     }
 }

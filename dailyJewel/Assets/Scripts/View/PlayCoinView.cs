@@ -10,8 +10,6 @@ namespace View
 
         private GameObject myAssets;
 
-        private float waitTime;
-
         public static PlayCoinView Singleton;
 
         public void Awake()

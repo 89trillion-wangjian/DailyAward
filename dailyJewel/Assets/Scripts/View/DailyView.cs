@@ -1,63 +1,45 @@
-﻿using System.Collections;
-using Controller;
+﻿using System;
+using System.Collections;
+using Model;
 using SimpleJSON;
 using UnityEngine;
-using UnityEngine.Serialization;
+using Utils;
+using EventType = Entity.EventType;
 
 namespace View
 {
-    public class MainView : MonoBehaviour
+    public class DailyView : MonoBehaviour
     {
         [SerializeField] private GameObject dailyJewel;
 
         [SerializeField] private DailyJuwelView dailyJuwelView;
-
+    
         [SerializeField] private Sprite[] coinImages;
 
         [SerializeField] private GameObject prefabCoin;
-
-        [SerializeField] private MainController mainController;
-
+    
         [SerializeField] private GameObject toast;
-
-        public static MainView Singleton;
-
-        private int coinIndex;
-
-        public void Awake()
+    
+        void Start()
         {
-            Singleton = this;
+            DailyModel.CreateInstance().OpenPanel += ShowDailyPanel;
+            DailyModel.CreateInstance().OnCoinAni += CreateCoin;
+            EventCenter.AddListener<string>(EventType.ShowToask, ShowToast);
         }
 
-        /// <summary>
-        /// 点击按钮，读取json数据，成功后打开宝箱页面
-        /// </summary>
-        public void ReadJson()
-        {
-            mainController.ReadJson();
-        }
-        
-        /// <summary>
-        /// 打开宝箱页面
-        /// </summary>
-        /// <param name="str">数据</param>
-        public void ShowDailyPanel(JSONNode str)
+        private void ShowDailyPanel(JSONNode json)
         {
             dailyJewel.SetActive(true);
-            dailyJuwelView.RanderItem(str);
+            dailyJuwelView.RanderItem(json);
         }
 
-        public void CloseView()
-        {
-            dailyJewel.SetActive(false);
-        }
-        
         /// <summary>
         /// 创建金币动画
         /// </summary>
         /// <param name="createCoinNum"></param>
         public void CreateCoin(int createCoinNum = 5)
         {
+            createCoinNum = Math.Min(createCoinNum, 15);
             StartCoroutine(Create(createCoinNum));
         }
 
@@ -73,6 +55,11 @@ namespace View
             }
         }
 
+        public void ClosePanel()
+        {
+            dailyJewel.SetActive(false);
+        }
+
         /// <summary>
         /// 提示
         /// </summary>
@@ -81,5 +68,6 @@ namespace View
             Instantiate(toast, this.transform, false);
             ToastView.Singleton.ChangeToast(toastTxt);
         }
+
     }
 }

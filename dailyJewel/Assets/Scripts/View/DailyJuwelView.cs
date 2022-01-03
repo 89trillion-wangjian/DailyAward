@@ -1,4 +1,5 @@
 ﻿using System;
+using Controller;
 using SimpleJSON;
 using UnityEngine;
 using UnityEngine.UI;
@@ -40,7 +41,7 @@ namespace View
                 else
                 {
                     Instantiate(this.dailyItme, this.dailyNode.transform, false);
-                    DailyNodeView.Singleton.InitData(jsonNode[i]);
+                    DailyNodeController.Singleton.InitData(jsonNode[i]);
                 }
             }
 
