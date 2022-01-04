@@ -1,12 +1,13 @@
 # 每日精选&宝箱 -- 技术文档
 
 ## 1. 整体框架
-每日精选&宝箱，通过滑动列表实现页面，每个精选item/宝箱item单独实现，控制自己的行为，并派发事件加金币或钻石等
+model存储玩家金币数量，设置委托，ui类设置委托监听，当model中的数据改变时，ui执行对应的刷新方法
+每个item设置单独的view/controller脚本控制逻辑与显示。
 ## 2. 目录结构
 * Scene
    * MainScene
 * Resources
-   * Coins           ---获取种类
+   * Coins           ---货币种类
    * Cards           ---卡牌
    * Awards        ---奖励
    * Effect           ---特效
@@ -33,6 +34,3 @@
 
 ## 4. 序列图
 ![sequence](https://github.com/89trillion-wangjian/DailyAward/blob/master/seq.png)
-## 5.todo
-事件传递方式：可以用委托实现一个全局事件传递，弃用现用的脚本传递方式，解耦
-分层：由于时间问题，没有采用mvc分层，健壮性不强
