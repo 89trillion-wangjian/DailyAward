@@ -1,3 +1,35 @@
 
 O
 Assets/SimpleJSON/SimpleJSON.cs,a/0/a00202d936d36cdde4ea25259567eaf76e20156d
+\
+,Assets/Scripts/Controller/DailyController.cs,7/7/77138503f42109344aaa801f2c3ee4d8389a02fd
+R
+"Assets/Scripts/Entity/EventType.cs,d/d/dd0a117c2abc085e8d4e22897fe3d353d32b67b6
+S
+#Assets/Scripts/Entity/RewardType.cs,b/d/bdb5fe22faf8123ee65fca0b666dda5ad800e74f
+R
+"Assets/Scripts/Model/DailyModel.cs,1/1/11f91ae88e04fb51f6a949bfae3aa1e6078c2e1a
+U
+%Assets/Scripts/View/DailyJuwelView.cs,f/e/febad76835b9bd7965e2a4dc52045a3ef878493f
+S
+#Assets/Scripts/Utils/EventCenter.cs,6/1/615a75927c88e374274f674ce7533a398124d163
+T
+$Assets/Scripts/View/DailyNodeView.cs,4/a/4ae28dd14e85bd05f485e9a4499a811fcc432b00
+V
+&Assets/Scripts/View/DailySolderView.cs,c/5/c57e4162dc631bdda09b424d102b2a7b8a9c401e
+P
+ Assets/Scripts/View/DailyView.cs,9/f/9fdc66939461b68f50acd3894c18e9e946971bf8
+S
+#Assets/Scripts/View/MyAssetsView.cs,9/9/99bf74e1a484fec2a715790a23415d0a37460e71
+S
+#Assets/Scripts/View/PlayCoinView.cs,5/3/53b4041b161f017557a87b71fb591b463916e79f
+P
+ Assets/Scripts/View/ToastView.cs,9/2/92bed899c92fef86866a2cc9e94cbdbeda5757a9
+`
+0Assets/Scripts/Controller/DailyNodeController.cs,5/8/583f3239e5ace2aa12b60f3d597e976af4f107b4
+a
+1Assets/Scripts/Controller/DailyJewelController.cs,8/6/86b1ca2a2860437ea720e8d360475e038b997bbc
+b
+2Assets/Scripts/Controller/DailySolderController.cs,b/f/bf23c3f41b5dbf578f4f7ba60ea8a352059b6f24
+_
+/Assets/Scripts/Controller/MyAssetsController.cs,4/a/4a917af1caf959e3da1ae12074e35bb2eb05bdb1
