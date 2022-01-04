@@ -16,7 +16,7 @@
    * Model
    * Utils
    * View
-* SimpleJSON
+   * SimpleJSON
 * Plugins            ------插件（doTween）
 * Res                  ------部分静态资源
 * Data                ------数据
@@ -29,6 +29,7 @@
 |Model       |存放玩家数据，设置委托            |
 |Utils          |事件传递脚本，工具  |
 |View         |委托事件绑定，处理ui显示              |
+|SimpleJSON    |解析json工具              |
 
 ## 4. 序列图
 ![sequence](https://github.com/89trillion-wangjian/DailyAward/blob/master/seq.png)
