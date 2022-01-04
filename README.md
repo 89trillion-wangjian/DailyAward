@@ -7,20 +7,14 @@ model存储玩家金币数量，设置委托，ui类设置委托监听，当mode
 * Scene
    * MainScene
 * Resources
-   * Coins           ---货币种类
-   * Cards           ---卡牌
-   * Awards        ---奖励
-   * Effect           ---特效
-* Scripts
-   * Controller
-   * Entity
-   * Model
-   * Utils
-   * View
-   * SimpleJSON
-* Plugins            ------插件（doTween）
-* Res                  ------部分静态资源
-* Data                ------数据
+   * Coins           #货币种类
+   * Cards           #卡牌
+   * Awards          #奖励
+   * Effect          #特效
+* Scripts            #脚本
+* Plugins            #插件（doTween）
+* Res                #部分静态资源
+* Data               #数据
 
 ## 3.代码逻辑分层
 |文件夹        |主要职责                  |
