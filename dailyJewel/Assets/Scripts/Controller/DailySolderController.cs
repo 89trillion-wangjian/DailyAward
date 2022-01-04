@@ -1,14 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Model;
+﻿using Model;
 using UnityEngine;
 
-public class DailySolderController : MonoBehaviour
+namespace Controller
 {
-    public void GetAward()
+    public class DailySolderController : MonoBehaviour
     {
-        DailyModel.CreateInstance().SolderBuyTimes++;
-        DailyModel.CreateInstance().MyCoinCount = DailyModel.CreateInstance().MyCoinCount
-                                                  + DailyModel.CreateInstance().SolderBuyTimes * 5;
+        public void GetAward()
+        {
+            DailyModel.CreateInstance().SolderBuyTimes++;
+            DailyModel.CreateInstance().MyCoinCount = DailyModel.CreateInstance().MyCoinCount
+                                                      + DailyModel.CreateInstance().SolderBuyTimes * 5;
+        }
     }
 }

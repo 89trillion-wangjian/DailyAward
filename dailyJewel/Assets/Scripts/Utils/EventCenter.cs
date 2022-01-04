@@ -204,7 +204,7 @@ namespace Utils
             OnListeningAdd(eventName, handle);
             _eventHandles[eventName] = (EventHandle<T1, T2, T3>) _eventHandles[eventName] + handle;
         }
-        
+
 
         /// <summary>
         /// 移除事件监听

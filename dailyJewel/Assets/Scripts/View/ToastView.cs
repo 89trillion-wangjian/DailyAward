@@ -13,7 +13,7 @@ namespace View
         {
             Singleton = this;
         }
-        
+
         /// <summary>
         /// 更改toast提示文本
         /// </summary>

@@ -11,16 +11,16 @@ namespace Controller
 {
     public class DailyNodeController : MonoBehaviour
     {
-
         [SerializeField] private DailyNodeView view;
-    
-        public static DailyNodeController Singleton;
-    
+
+        public static DailyNodeController Singleton = null;
+
         private JSONNode itemData;
-    
+
         private int rewardType = 0;
 
         private int needCoin = 0;
+
         public void Awake()
         {
             Singleton = this;
@@ -42,7 +42,7 @@ namespace Controller
 
             //扣金币
             DailyModel.CreateInstance().MyCoinCount -= needCoin;
-        
+
             itemData["isPurchased"] = "1";
             FreshDisplay();
             if (rewardType == (int) RewardType.Diamonds)
@@ -51,20 +51,20 @@ namespace Controller
                 DailyModel.CreateInstance().MyCoinCount += Convert.ToInt32(coinNum);
             }
         }
-    
+
         private void FreshDisplay()
         {
             string value = itemData.GetValueOrDefault("isPurchased", 1);
             view.ChangeBuyStatus(Convert.ToInt16(value) == -1);
         }
-    
+
         private void InitDisplay()
         {
             string type = itemData.GetValueOrDefault("type", 1);
             rewardType = Convert.ToInt32(type);
             string value = itemData.GetValueOrDefault("isPurchased", 1);
             view.ChangeBuyStatus(Convert.ToInt16(value) == -1);
-        
+
             //刷新card
             string subType = itemData.GetValueOrDefault("subType", null);
             view.ChangeCardImage(subType);

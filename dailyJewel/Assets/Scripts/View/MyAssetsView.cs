@@ -7,7 +7,6 @@ namespace View
 {
     public class MyAssetsView : MonoBehaviour
     {
-
         public Text coinNumLabel;
 
         public static MyAssetsView Singleton;

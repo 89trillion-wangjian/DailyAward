@@ -13,13 +13,13 @@ namespace View
         [SerializeField] private GameObject dailyJewel;
 
         [SerializeField] private DailyJuwelView dailyJuwelView;
-    
+
         [SerializeField] private Sprite[] coinImages;
 
         [SerializeField] private GameObject prefabCoin;
-    
+
         [SerializeField] private GameObject toast;
-    
+
         void Start()
         {
             DailyModel.CreateInstance().OpenPanel += ShowDailyPanel;
@@ -68,6 +68,5 @@ namespace View
             Instantiate(toast, this.transform, false);
             ToastView.Singleton.ChangeToast(toastTxt);
         }
-
     }
 }

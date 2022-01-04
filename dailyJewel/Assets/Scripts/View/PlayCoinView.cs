@@ -22,6 +22,7 @@ namespace View
             myAssets = MyAssetsView.Singleton.coinImg;
             MoveCoin();
         }
+
         /// <summary>
         /// 金币动效
         /// </summary>

@@ -4,7 +4,5 @@ namespace Controller
 {
     public class DailyJewelController : MonoBehaviour
     {
-
-    
     }
 }
