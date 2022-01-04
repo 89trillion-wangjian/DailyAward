@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using Model;
 using SimpleJSON;
 using UnityEngine;
 using View;
@@ -10,13 +9,6 @@ namespace Controller
     public class DailyController : MonoBehaviour
     {
         [SerializeField] private DailyView view;
-
-        public static DailyController DailyCtrl;
-
-        public void Awake()
-        {
-            DailyCtrl = this;
-        }
 
         /// <summary>
         /// 点击按钮，读取json数据，成功后打开宝箱页面
@@ -41,8 +33,7 @@ namespace Controller
             try
             {
                 var simpleJson = JSON.Parse(str);
-                // view.ShowDailyPanel(simpleJson["dailyProduct"]);
-                DailyModel.CreateInstance().OpenPanel(simpleJson["dailyProduct"]);
+                view.ShowDailyPanel(simpleJson["dailyProduct"]);
             }
             catch (Exception e)
             {

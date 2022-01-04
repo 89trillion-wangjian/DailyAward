@@ -1,5 +1,4 @@
-﻿using SimpleJSON;
-
+﻿
 namespace Model
 {
     public class DailyModel
@@ -17,26 +16,16 @@ namespace Model
         /// 模型委托（当用户信息发生变化时执行）
         public delegate void OnValueChange(int val);
 
-        public OnOpenPanel<JSONNode> OpenPanel;
-
         //单例
-        private static DailyModel Singleton = null;
+        private static DailyModel singleton = null;
 
         public static DailyModel CreateInstance()
         {
-            return Singleton ?? (Singleton = new DailyModel());
+            return singleton ?? (singleton = new DailyModel());
         }
 
         private DailyModel()
         {
-        }
-
-        public void ShowDailyPanel(JSONNode json)
-        {
-            if (OpenPanel != null)
-            {
-                OpenPanel(json);
-            }
         }
 
         public int MyCoinCount

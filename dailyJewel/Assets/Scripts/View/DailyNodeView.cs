@@ -17,13 +17,20 @@ namespace View
 
         [SerializeField] private Text countLabel;
 
-
+        /// <summary>
+        /// 切换状态
+        /// </summary>
+        /// <param name="isBuy"></param>
         public void ChangeBuyStatus(bool isBuy)
         {
             btnBuy.SetActive(isBuy);
             hasBuy.SetActive(!isBuy);
         }
-
+        
+        /// <summary>
+        /// 购买按钮的货币
+        /// </summary>
+        /// <param name="txt"></param>
         public void ShowCoin(string txt)
         {
             if (txt.Equals("免费"))
@@ -34,6 +41,10 @@ namespace View
             cardColdLabel.text = txt;
         }
 
+        /// <summary>
+        /// 显示数量
+        /// </summary>
+        /// <param name="count"></param>
         public void ShowCount(string count)
         {
             countLabel.text = $"x{count}";

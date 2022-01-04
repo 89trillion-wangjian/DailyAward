@@ -31,7 +31,10 @@ namespace Controller
             this.itemData = jsonNode;
             InitDisplay();
         }
-
+        
+        /// <summary>
+        /// 购买
+        /// </summary>
         public void BuyCard()
         {
             if (DailyModel.CreateInstance().MyCoinCount < needCoin)

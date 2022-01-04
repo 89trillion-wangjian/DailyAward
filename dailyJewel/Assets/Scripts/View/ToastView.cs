@@ -20,7 +20,7 @@ namespace View
         /// <param name="toastTxt"></param>
         public void ChangeToast(string toastTxt)
         {
-            this.toast.text = toastTxt;
+            toast.text = toastTxt;
         }
 
         public void Start()
@@ -30,7 +30,7 @@ namespace View
 
         public void CloseToast()
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 }

@@ -22,12 +22,15 @@ namespace View
 
         void Start()
         {
-            DailyModel.CreateInstance().OpenPanel += ShowDailyPanel;
             DailyModel.CreateInstance().OnCoinAni += CreateCoin;
             EventCenter.AddListener<string>(EventType.ShowToask, ShowToast);
         }
-
-        private void ShowDailyPanel(JSONNode json)
+        
+        /// <summary>
+        /// 打开每日精选 宝箱界面
+        /// </summary>
+        /// <param name="json">列表数据</param>
+        public void ShowDailyPanel(JSONNode json)
         {
             dailyJewel.SetActive(true);
             dailyJuwelView.RanderItem(json);
@@ -37,7 +40,7 @@ namespace View
         /// 创建金币动画
         /// </summary>
         /// <param name="createCoinNum"></param>
-        public void CreateCoin(int createCoinNum = 5)
+        private void CreateCoin(int createCoinNum = 5)
         {
             createCoinNum = Math.Min(createCoinNum, 15);
             StartCoroutine(Create(createCoinNum));
