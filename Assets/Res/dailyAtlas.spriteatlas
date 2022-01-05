@@ -6,7 +6,7 @@ SpriteAtlas:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: New Sprite Atlas
+  m_Name: dailyAtlas
   m_EditorData:
     serializedVersion: 2
     textureSettings:
@@ -30,14 +30,7 @@ SpriteAtlas:
       enableTightPacking: 1
     variantMultiplier: 1
     packables:
-    - {fileID: 2800000, guid: e3c706332e6d44a59a198398a02a5828, type: 3}
-    - {fileID: 2800000, guid: aa8d28c1115a14db68a3687e780344fd, type: 3}
-    - {fileID: 2800000, guid: c738d300524524bf5a832381513fb87b, type: 3}
-    - {fileID: 2800000, guid: df8234f58e1344d0e9315507f320a530, type: 3}
-    - {fileID: 2800000, guid: a0801864a5db04d2991ca4a88eabe2f9, type: 3}
-    - {fileID: 2800000, guid: 404ca54df4e1e4717b37418ebe931289, type: 3}
-    - {fileID: 2800000, guid: 27dddcb10c9894e15abe1d606d760535, type: 3}
-    - {fileID: 2800000, guid: d896e01b35fb34e3faab9801dc9cd830, type: 3}
+    - {fileID: 102900000, guid: 9ef5220b330e14faab8b8d63121219e7, type: 3}
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -50,7 +43,10 @@ SpriteAtlas:
   - {fileID: -30645784461638500, guid: e3c706332e6d44a59a198398a02a5828, type: 3}
   - {fileID: 21300000, guid: a0801864a5db04d2991ca4a88eabe2f9, type: 3}
   - {fileID: 21300000, guid: df8234f58e1344d0e9315507f320a530, type: 3}
+  - {fileID: 21300000, guid: 458395189e8c649acb5115b1c792cc20, type: 3}
+  - {fileID: 21300000, guid: 806f718a1e3e540128462298d2821a46, type: 3}
   - {fileID: 21300000, guid: d896e01b35fb34e3faab9801dc9cd830, type: 3}
+  - {fileID: 21300000, guid: 0406b66b7375e4980adc9e891fdedda6, type: 3}
   - {fileID: 21300000, guid: 404ca54df4e1e4717b37418ebe931289, type: 3}
   m_PackedSpriteNamesToIndex:
   - card_purple_bg
@@ -62,7 +58,10 @@ SpriteAtlas:
   - AEP_Atlas_1
   - icon_check_mark
   - coin
+  - btn_green_104
+  - card_coin_gem
   - tab_btn_2
+  - banner_bule
   - panel_coin_gem
-  m_Tag: New Sprite Atlas
+  m_Tag: dailyAtlas
   m_IsVariant: 0
