@@ -22,7 +22,7 @@ namespace View
         /// 渲染卡牌奖励和士兵招募宝箱
         /// </summary>
         /// <param name="jsonNode"></param>
-        public void RenderItem(JSONNode jsonNode)
+        public void RenderCardAndSolderItem(JSONNode jsonNode)
         {
             Double jsonHang = Math.Ceiling(jsonNode.Count / 3.0);
             int preCount = jsonNode.Count;

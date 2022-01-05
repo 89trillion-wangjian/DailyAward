@@ -34,7 +34,7 @@ namespace View
         public void ShowDailyPanel(JSONNode json)
         {
             dailyJewel.SetActive(true);
-            dailyJewelView.RenderItem(json);
+            dailyJewelView.RenderCardAndSolderItem(json);
         }
 
         /// <summary>
