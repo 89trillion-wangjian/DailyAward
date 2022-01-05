@@ -6,9 +6,9 @@
 
         public OnValueChange OnCoinAni;
 
-        public int SolderBuyTimes { get; set; }
+        public int SolderBuyTimes { get; set; } = 0;
 
-        private int myCoinCount;
+        private int myCoinCount = 0;
 
         /// 模型委托（当用户信息发生变化时执行）
         public delegate void OnValueChange(int val);
@@ -21,10 +21,6 @@
             return singleton ?? (singleton = new DailyModel());
         }
 
-        private DailyModel()
-        {
-        }
-
         public int MyCoinCount
         {
             get
@@ -33,16 +29,9 @@
             }
             set
             {
-                if (OnCoinAni != null)
-                {
-                    OnCoinAni(value - MyCoinCount);
-                }
-
+                OnCoinAni?.Invoke(value - MyCoinCount);
                 myCoinCount = value;
-                if (OnCoinChange != null)
-                {
-                    OnCoinChange(myCoinCount);
-                }
+                OnCoinChange?.Invoke(myCoinCount);
             }
         }
     }

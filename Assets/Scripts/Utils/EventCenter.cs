@@ -21,7 +21,11 @@ namespace Utils
         /// <param name="eventName">事件名</param>
         public static void PostEvent(string eventName)
         {
-            if (eventHandles == null) return;
+            if (eventHandles == null)
+            {
+                return;
+            }
+
             Delegate d;
             if (eventHandles.TryGetValue(eventName, out d))
             {
