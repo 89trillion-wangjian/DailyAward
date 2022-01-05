@@ -14,7 +14,7 @@ namespace View
 
         public GameObject coinImg;
 
-        private float coinNum;
+        private float coinNum = 0;
         
         private Sequence mScoreSequence;
 
@@ -27,7 +27,7 @@ namespace View
         {
             DailyModel.CreateInstance().OnCoinChange += ChangeCount;
             coinNumLabel.text = DailyModel.CreateInstance().MyCoinCount.ToString();
-            coinNum = System.Convert.ToInt32(coinNumLabel.text);
+            coinNum = Convert.ToInt32(coinNumLabel.text);
         }
 
         private void ChangeCount(int nowCoinCount)
