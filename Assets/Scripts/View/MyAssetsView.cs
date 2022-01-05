@@ -27,17 +27,18 @@ namespace View
         {
             DailyModel.CreateInstance().OnCoinChange += ChangeCount;
             coinNumLabel.text = DailyModel.CreateInstance().MyCoinCount.ToString();
-            coinNum = Convert.ToInt32(coinNumLabel.text);
+            
         }
 
         private void ChangeCount(int nowCoinCount)
         {
+            coinNum = Convert.ToInt32(coinNumLabel.text);
             mScoreSequence = DOTween.Sequence();
             mScoreSequence.SetAutoKill(false);
             mScoreSequence.SetDelay(0.5f);
             mScoreSequence.Append(DOTween.To(delegate (float value) {
                 var temp = Math.Floor(value);
-                coinNumLabel.text = temp + "";
+                coinNumLabel.text = $"{temp}";
             }, coinNum, nowCoinCount, 0.4f));
             coinNum = nowCoinCount;
         }

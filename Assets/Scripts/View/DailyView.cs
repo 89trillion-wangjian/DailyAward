@@ -13,7 +13,7 @@ namespace View
     {
         [SerializeField] private GameObject dailyJewel;
 
-        [FormerlySerializedAs("dailyJuwelView")] [SerializeField] private DailyJewelView dailyJewelView;
+        [SerializeField] private DailyJewelView dailyJewelView;
 
         [SerializeField] private Sprite[] coinImages;
 
@@ -70,7 +70,7 @@ namespace View
         public void ShowToast(string toastTxt)
         {
             Instantiate(toast, this.transform, false);
-            ToastView.Singleton.ChangeToast(toastTxt);
+            ToastView.Singleton.ChangeToastTxt(toastTxt);
         }
     }
 }

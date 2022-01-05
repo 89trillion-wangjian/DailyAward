@@ -15,7 +15,12 @@ namespace Controller
         /// </summary>
         public void ShowDailyPanel()
         {
-            ReadJson();
+            JSONNode jsonData = ReadJson();
+            if (jsonData == null)
+            {
+                return;
+            }
+            view.ShowDailyPanel(jsonData);
         }
 
         public void ClosePanel()
@@ -26,18 +31,19 @@ namespace Controller
         /// <summary>
         ///  读取json数据
         /// </summary>
-        private void ReadJson()
+        private JSONNode ReadJson()
         {
             string path = $"{Application.dataPath}/Data/data.json";
             string str = new StreamReader(path).ReadToEnd();
             try
             {
                 var simpleJson = JSON.Parse(str);
-                view.ShowDailyPanel(simpleJson["dailyProduct"]);
+                return simpleJson["dailyProduct"];
             }
             catch (Exception e)
             {
                 Debug.Log(e);
+                return null;
             }
         }
     }

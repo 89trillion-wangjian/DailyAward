@@ -65,8 +65,8 @@ namespace Controller
         {
             string type = itemData.GetValueOrDefault("type", 1);
             rewardType = Convert.ToInt32(type);
-            string value = itemData.GetValueOrDefault("isPurchased", 1);
-            view.ChangeBuyStatus(Convert.ToInt16(value) == -1);
+            string purchaseInfo = itemData.GetValueOrDefault("isPurchased", 1);
+            view.ChangeBuyStatus(Convert.ToInt16(purchaseInfo) == -1);
 
             //刷新card
             string subType = itemData.GetValueOrDefault("subType", null);
@@ -82,15 +82,15 @@ namespace Controller
             needCoin = int.Parse(costGold);
             if (Convert.ToInt64(costGold) > 0)
             {
-                view.ShowCoin(costGold);
+                view.ShowNeedCoin(costGold);
             }
             else if (Convert.ToInt64(costGem) > 0)
             {
-                view.ShowCoin(costGem);
+                view.ShowNeedCoin(costGem);
             }
             else
             {
-                view.ShowCoin("免费");
+                view.ShowNeedCoin("免费");
             }
         }
     }

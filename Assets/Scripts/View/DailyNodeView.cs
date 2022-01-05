@@ -31,7 +31,7 @@ namespace View
         /// 购买按钮的货币
         /// </summary>
         /// <param name="txt"></param>
-        public void ShowCoin(string txt)
+        public void ShowNeedCoin(string txt)
         {
             if (txt.Equals("免费"))
             {

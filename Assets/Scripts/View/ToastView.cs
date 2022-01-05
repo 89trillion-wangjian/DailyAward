@@ -18,7 +18,7 @@ namespace View
         /// 更改toast提示文本
         /// </summary>
         /// <param name="toastTxt"></param>
-        public void ChangeToast(string toastTxt)
+        public void ChangeToastTxt(string toastTxt)
         {
             toast.text = toastTxt;
         }
