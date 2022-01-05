@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: New Sprite Atlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: e3c706332e6d44a59a198398a02a5828, type: 3}
+    - {fileID: 2800000, guid: aa8d28c1115a14db68a3687e780344fd, type: 3}
+    - {fileID: 2800000, guid: c738d300524524bf5a832381513fb87b, type: 3}
+    - {fileID: 2800000, guid: df8234f58e1344d0e9315507f320a530, type: 3}
+    - {fileID: 2800000, guid: a0801864a5db04d2991ca4a88eabe2f9, type: 3}
+    - {fileID: 2800000, guid: 404ca54df4e1e4717b37418ebe931289, type: 3}
+    - {fileID: 2800000, guid: 27dddcb10c9894e15abe1d606d760535, type: 3}
+    - {fileID: 2800000, guid: d896e01b35fb34e3faab9801dc9cd830, type: 3}
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: c738d300524524bf5a832381513fb87b, type: 3}
+  - {fileID: 21300000, guid: 27dddcb10c9894e15abe1d606d760535, type: 3}
+  - {fileID: 21300000, guid: aa8d28c1115a14db68a3687e780344fd, type: 3}
+  - {fileID: 528718928575155108, guid: e3c706332e6d44a59a198398a02a5828, type: 3}
+  - {fileID: -4759598359583354153, guid: e3c706332e6d44a59a198398a02a5828, type: 3}
+  - {fileID: -3773995664966322707, guid: e3c706332e6d44a59a198398a02a5828, type: 3}
+  - {fileID: -30645784461638500, guid: e3c706332e6d44a59a198398a02a5828, type: 3}
+  - {fileID: 21300000, guid: a0801864a5db04d2991ca4a88eabe2f9, type: 3}
+  - {fileID: 21300000, guid: df8234f58e1344d0e9315507f320a530, type: 3}
+  - {fileID: 21300000, guid: d896e01b35fb34e3faab9801dc9cd830, type: 3}
+  - {fileID: 21300000, guid: 404ca54df4e1e4717b37418ebe931289, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - card_purple_bg
+  - shop_lock
+  - annue_green
+  - AEP_Atlas_2
+  - AEP_Atlas_3
+  - AEP_Atlas_0
+  - AEP_Atlas_1
+  - icon_check_mark
+  - coin
+  - tab_btn_2
+  - panel_coin_gem
+  m_Tag: New Sprite Atlas
+  m_IsVariant: 0
