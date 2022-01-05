@@ -786,7 +786,7 @@ GameObject:
   - component: {fileID: 970927489}
   - component: {fileID: 970927491}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: pnlDaily
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1012,7 +1012,7 @@ GameObject:
   - component: {fileID: 997003762}
   - component: {fileID: 997003761}
   m_Layer: 5
-  m_Name: Image
+  m_Name: bg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
