@@ -67,7 +67,7 @@ namespace View
         /// <summary>
         /// 提示
         /// </summary>
-        public void ShowToast(string toastTxt)
+        private void ShowToast(string toastTxt)
         {
             Instantiate(toast, this.transform, false);
             ToastView.Singleton.ChangeToastTxt(toastTxt);
