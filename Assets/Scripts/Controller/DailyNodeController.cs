@@ -82,16 +82,22 @@ namespace Controller
             needCoin = int.Parse(costGold);
             if (Convert.ToInt64(costGold) > 0)
             {
-                view.ShowNeedCoin(costGold);
+                view.ShowNeedCoin(costGold, DailyNodeBuyType.NotFree);
             }
             else if (Convert.ToInt64(costGem) > 0)
             {
-                view.ShowNeedCoin(costGem);
+                view.ShowNeedCoin(costGem, DailyNodeBuyType.NotFree);
             }
             else
             {
-                view.ShowNeedCoin("免费");
+                view.ShowNeedCoin("免费", DailyNodeBuyType.Free);
             }
         }
+    }
+
+    public enum DailyNodeBuyType
+    {
+        Free = 0,
+        NotFree,
     }
 }

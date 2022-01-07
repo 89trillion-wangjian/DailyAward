@@ -15,7 +15,7 @@ namespace View
         public GameObject coinImg;
 
         private float coinNum = 0;
-        
+
         private Sequence mScoreSequence;
 
         public void Awake()
@@ -27,7 +27,6 @@ namespace View
         {
             DailyModel.CreateInstance().OnCoinChange += ChangeCount;
             coinNumLabel.text = DailyModel.CreateInstance().MyCoinCount.ToString();
-            
         }
 
         private void ChangeCount(int nowCoinCount)
@@ -36,12 +35,12 @@ namespace View
             mScoreSequence = DOTween.Sequence();
             mScoreSequence.SetAutoKill(false);
             mScoreSequence.SetDelay(0.5f);
-            mScoreSequence.Append(DOTween.To(delegate (float value) {
+            mScoreSequence.Append(DOTween.To(delegate(float value)
+            {
                 var temp = Math.Floor(value);
                 coinNumLabel.text = $"{temp}";
             }, coinNum, nowCoinCount, 0.4f));
             coinNum = nowCoinCount;
         }
-
     }
 }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Controller;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace View
@@ -31,9 +32,10 @@ namespace View
         /// 购买按钮的货币
         /// </summary>
         /// <param name="txt"></param>
-        public void ShowNeedCoin(string txt)
+        /// <param name="buyType"></param>
+        public void ShowNeedCoin(string txt, DailyNodeBuyType buyType)
         {
-            if (txt.Equals("免费"))
+            if (buyType == DailyNodeBuyType.Free)
             {
                 moneyImage.SetActive(false);
             }
