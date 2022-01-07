@@ -54,7 +54,8 @@ namespace View
             {
                 i++;
                 Instantiate(prefabCoin, gameObject.transform, false);
-                PlayCoinView.Singleton.ChangeImage(coinImages[i % 6]);
+                prefabCoin.transform.localScale = new Vector3(0.3f, 0.3f, 1);
+                PlayCoinView.Singleton.ChangeImage(i % 6);
                 yield return new WaitForSeconds(0.1f);
             }
         }

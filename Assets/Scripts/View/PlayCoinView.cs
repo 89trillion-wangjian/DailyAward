@@ -1,12 +1,13 @@
 ﻿using DG.Tweening;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace View
 {
     public class PlayCoinView : MonoBehaviour
     {
-        [SerializeField] private Image image;
+        [SerializeField] private AnimationClip animClip;
+
+        [SerializeField] private Animator animator;
 
         private GameObject myAssets;
 
@@ -39,11 +40,11 @@ namespace View
             Destroy(this.gameObject);
         }
 
-        public void ChangeImage(Sprite sp)
+        public void ChangeImage(int index)
         {
-            image.sprite = sp;
-            image.rectTransform.sizeDelta
-                = new Vector2(image.sprite.rect.width * 0.7f, image.sprite.rect.height * 0.7f);
+            float element = animClip.length / 6.0f;
+            animator.Play("createCoinAnim", -1, element * index);
+            animator.speed = 0;
         }
     }
 }
